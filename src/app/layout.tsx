@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Dongle } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const dongle = Dongle({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--dongle",
+});
 
 export const metadata: Metadata = {
   title: "Pamana",
@@ -16,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${dongle.className} font-sans`}>{children}</body>
     </html>
   );
 }
