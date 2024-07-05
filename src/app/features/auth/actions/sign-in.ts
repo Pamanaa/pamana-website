@@ -40,7 +40,7 @@ const signIn = async (formData: FormData) => {
     );
   } catch (error) {}
 
-  redirect("/dashboard");
+  redirect("/");
 };
 
 export { signIn };

@@ -22,5 +22,5 @@ export const signOut = async (_formData: FormData) => {
     sessionCookie.attributes
   );
 
-  redirect("/sign-in");
+  redirect("/");
 };
