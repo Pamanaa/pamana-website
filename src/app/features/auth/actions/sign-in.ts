@@ -18,7 +18,6 @@ const signIn = async (formData: FormData) => {
     });
 
     if (!user) {
-      // https://www.robinwieruch.de/next-forms/
       throw new Error("Incorrect email or password");
     }
 
@@ -28,7 +27,6 @@ const signIn = async (formData: FormData) => {
     );
 
     if (!validPassword) {
-      // https://www.robinwieruch.de/next-forms/
       throw new Error("Incorrect email or password");
     }
 
@@ -40,10 +38,7 @@ const signIn = async (formData: FormData) => {
       sessionCookie.value,
       sessionCookie.attributes
     );
-  } catch (error) {
-    // TODO: add error feedback yourself
-    // https://www.robinwieruch.de/next-forms/
-  }
+  } catch (error) {}
 
   redirect("/dashboard");
 };

@@ -41,12 +41,7 @@ const signUp = async (formData: FormData) => {
       sessionCookie.value,
       sessionCookie.attributes
     );
-  } catch (error) {
-    // TODO: add error feedback yourself
-    // https://www.robinwieruch.de/next-forms/
-    // TODO: add error handling if user email is already taken
-    // The Road to Next
-  }
+  } catch (error) {}
 
   redirect("/sign-in");
 };
