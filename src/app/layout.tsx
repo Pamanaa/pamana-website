@@ -23,15 +23,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dongle.className} font-sans`}>
-        <nav className="p-4 flex justify-between">
-          <ul className="flex gap-x-4 items-center">{authNav}</ul>
-        </nav>
-
-        <hr />
-
-        <main className="p-4">{children}</main>
-      </body>
+      <body className={`${dongle.className} font-sans`}>{children}</body>
     </html>
   );
 }

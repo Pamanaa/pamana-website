@@ -11,8 +11,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Dongle"', "sans-serif"],
-        serif: ['"Cormorant SC"', "serif"],
+        dongle: ['"Dongle"', "sans-serif"],
+        cormorant: ['"Cormorant SC"', "serif"],
+        ephesis: ["Ephesis", "sans-serif"],
       },
       screens: {
         xs: "375px",

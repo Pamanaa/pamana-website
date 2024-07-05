@@ -48,7 +48,7 @@ const signUp = async (formData: FormData) => {
     // The Road to Next
   }
 
-  redirect("/dashboard");
+  redirect("/sign-in");
 };
 
 export { signUp };
