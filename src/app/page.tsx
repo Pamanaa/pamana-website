@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { signOut } from "./features/auth/actions/sign-out";
 import { getAuth } from "./features/auth/queries/get-auth";
+import { getName } from "./features/auth/queries/get-user";
 
 export default async function Home() {
   const { user } = await getAuth();
@@ -26,6 +27,8 @@ export default async function Home() {
       <h1 className="dongle-header-regular">- No validations yet</h1>
 
       {checker}
+
+      {getName()}
     </>
   );
 }
