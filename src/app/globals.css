@@ -21,3 +21,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.outline__standard {
+  @apply outline outline-[#B6AF99] outline-1;
+}

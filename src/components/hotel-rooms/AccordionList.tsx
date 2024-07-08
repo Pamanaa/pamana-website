@@ -7,7 +7,7 @@ interface AccordionListProps {
 
 const AccordionList = ({ rooms }: AccordionListProps) => {
   return (
-    <div className="accordion-list">
+    <div className="accordion-list dongle-h3-regular">
       {rooms.map((room) => (
         <AccordionItem key={room.id} room={room} />
       ))}

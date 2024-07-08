@@ -1,6 +1,11 @@
-export interface ButtonProps {
+export interface InfoButtonProps {
   primary?: boolean;
   label: string;
+}
+
+export interface AdminButtonProps {
+  label: string;
+  icon?: boolean;
 }
 
 export interface DatabaseUserAttributes {
