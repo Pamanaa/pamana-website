@@ -101,7 +101,7 @@ const config: Config = {
           fontFamily: '"Dongle", sans-serif',
         },
         ".dongle-body-bold": {
-          fontSize: "1.25rem",
+          fontSize: "1.75rem",
           fontWeight: "700",
           fontFamily: '"Dongle", sans-serif',
         },
