@@ -2,6 +2,7 @@ import Image from "next/image";
 import { signOut } from "./features/auth/actions/sign-out";
 import { getAuth } from "./features/auth/queries/get-auth";
 import { getName } from "./features/auth/queries/get-user";
+import Link from "next/link";
 
 export default async function Home() {
   const { user } = await getAuth();
@@ -23,7 +24,9 @@ export default async function Home() {
     <>
       <h1 className="dongle-header-active">TEST</h1>
       <h1 className="dongle-header-regular">localhost:3000/sign-up</h1>
-      <h1 className="dongle-header-regular">localhost:3000/sign-in</h1>
+      <h1 className="dongle-header-active">
+        <Link href="/hotel-rooms"> CLICK ME Redirect to protected page</Link>
+      </h1>
       <h1 className="dongle-header-regular">- No validations yet</h1>
 
       {checker}

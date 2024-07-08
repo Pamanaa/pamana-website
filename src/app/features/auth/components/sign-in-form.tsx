@@ -6,7 +6,7 @@ const SignInForm = () => {
   return (
     <div className="lg:w-2/5 xs:w-11/12 md:w-11/12 bg-white flex flex-col justify-center items-center px-[70px] py-[50px] rounded-2xl gap-[32px]">
       <div className="flex flex-row justify-center items-center gap-2">
-        <Image src={logo} alt="logo" />
+        <Image src={logo} alt="logo" className="w-24 h-auto" />
         <div className="flex flex-col leading-none">
           <h1 className="font-ephesis text-[64px]">Pamana</h1>
           <p className="font-cormorant text-[16px]">RESORTS AND HOTELS</p>
