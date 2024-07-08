@@ -1,9 +1,5 @@
+import { ButtonProps } from "@/utils/types";
 import clsx from "clsx";
-
-interface ButtonProps {
-  primary?: boolean;
-  label: string;
-}
 
 export const Button: React.FC<ButtonProps> = ({ primary, label }) => {
   return (
