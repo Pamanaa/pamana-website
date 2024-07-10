@@ -1,31 +1,11 @@
-## Install Dependencies
+## Set up using bash script `setup.sh`
+
+- Use compatible environment like Git Bash
 
 ```bash
-npm install
+chmod +x setup.sh
 ```
 
-## Set Up Environment Variables
-
 ```bash
-cp .env.example .env
-```
-
-## Initialize SQLite Database
-
-- Generate Prisma Client
-
-```bash
-npx prisma generate
-```
-
-- Run database migrations
-
-```bash
-npx prisma migrate dev --name init
-```
-
-## Run the Development Server
-
-```bash
-npm run dev
+./setup.sh
 ```
