@@ -41,3 +41,4 @@ next-env.d.ts
 
 # sqlite
 /prisma/dev.db-journal
+/prisma/dev.db
