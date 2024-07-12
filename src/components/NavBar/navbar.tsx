@@ -2,16 +2,21 @@
 import logo from "@/assets/images/Logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { navlinks } from "./navlinks";
 
 const Navbar: React.FC = () => {
+  const router = useRouter();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const currentPath = usePathname();
 
   const toggleMenu = (name: string) => {
     setOpenMenu(openMenu === name ? null : name);
+    console.log(name);
+    if (name === "ACCOMMODATION") {
+      router.push("/accommodations");
+    }
   };
 
   return (
