@@ -2,7 +2,7 @@ import { signUp } from "../actions/sign-up";
 
 const SignUpForm = () => {
   return (
-    <form action={signUp} className="p-4 flex flex-col gap-y-2">
+    <form action={signUp} className="flex flex-col gap-y-2 p-4">
       <input name="firstName" type="text" placeholder="First Name" />
       <input name="lastName" type="text" placeholder="Last Name" />
       <input name="email" type="email" placeholder="Email" />
