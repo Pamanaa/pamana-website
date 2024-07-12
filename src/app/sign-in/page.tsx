@@ -6,7 +6,7 @@ import login from "@/assets/images/Login.png";
 const SignIn = () => {
   return (
     <div
-      className="w-full h-screen bg-cover bg-center flex items-center justify-center"
+      className="flex h-screen w-full items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: `url(${login.src})` }}
     >
       <SignInForm />

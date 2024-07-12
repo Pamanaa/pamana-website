@@ -9,7 +9,7 @@ export const Button: React.FC<ButtonProps> = ({ primary, label }) => {
   return (
     <button
       className={clsx(
-        "lg:px-[20px] lg:pt-[10px] xs:px-[10px] xs:py-[5px]  lg:w-[300px] xs:w-[150px] h-[60px] rounded-lg flex items-center text-center justify-center text-light lg:dongle-h3-regular xs:dongle-body-regular leading-none",
+        "flex h-[60px] items-center justify-center rounded-lg text-center leading-none text-light xs:w-[150px] xs:px-[10px] xs:py-[5px] xs:dongle-body-regular lg:w-[300px] lg:px-[20px] lg:pt-[10px] lg:dongle-h3-regular",
         primary ? "bg-[#468EA0]" : "bg-green"
       )}
     >

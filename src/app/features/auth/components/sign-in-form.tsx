@@ -4,8 +4,8 @@ import logo from "@/assets/images/Logo.png";
 
 const SignInForm = () => {
   return (
-    <div className="lg:w-2/5 xs:w-11/12 md:w-11/12 bg-white flex flex-col justify-center items-center px-[70px] py-[50px] rounded-2xl gap-[32px]">
-      <div className="flex flex-row justify-center items-center gap-2">
+    <div className="flex flex-col items-center justify-center gap-[32px] rounded-2xl bg-white px-[70px] py-[50px] xs:w-11/12 md:w-11/12 lg:w-2/5">
+      <div className="flex flex-row items-center justify-center gap-2">
         <Image src={logo} alt="logo" />
         <div className="flex flex-col leading-none">
           <h1 className="font-ephesis text-[64px]">Pamana</h1>
@@ -14,12 +14,12 @@ const SignInForm = () => {
       </div>
       <form
         action={signIn}
-        className="flex flex-col w-full justify-center items-center gap-y-[32px]"
+        className="flex w-full flex-col items-center justify-center gap-y-[32px]"
       >
-        <div className="flex flex-col w-full justify-center items-left gap-[6px]">
+        <div className="items-left flex w-full flex-col justify-center gap-[6px]">
           <label
             htmlFor="email"
-            className="text-[16px] leading-3 font-sans text-gray-600"
+            className="font-sans text-[16px] leading-3 text-gray-600"
           >
             Email
           </label>
@@ -28,13 +28,13 @@ const SignInForm = () => {
             id="email"
             type="email"
             placeholder="Enter your email"
-            className="h-12 px-2 py-5 font-sans text-[16px] border-2 border-gray-60 rounded-lg w-full focus:outline-none focus:border-aqua"
+            className="border-gray-60 h-12 w-full rounded-lg border-2 px-2 py-5 font-sans text-[16px] focus:border-aqua focus:outline-none"
           />
         </div>
-        <div className="flex flex-col w-full justify-center items-left gap-[6px]">
+        <div className="items-left flex w-full flex-col justify-center gap-[6px]">
           <label
             htmlFor="password"
-            className="text-[16px] leading-3 font-sans text-gray-600"
+            className="font-sans text-[16px] leading-3 text-gray-600"
           >
             Password
           </label>
@@ -43,12 +43,12 @@ const SignInForm = () => {
             id="password"
             type="password"
             placeholder="Enter your password"
-            className="h-12 px-2 py-5 font-sans text-[16px] border-2 border-gray-60 rounded-lg w-full focus:outline-none focus:border-aqua"
+            className="border-gray-60 h-12 w-full rounded-lg border-2 px-2 py-5 font-sans text-[16px] focus:border-aqua focus:outline-none"
           />
         </div>
         <button
           type="submit"
-          className="font-sans bg-[#468EA0] lg:px-[20px] lg:pt-[5px] xs:px-[10px] xs:py-[5px]  lg:w-[360px] xs:w-[150px] h-[60px] rounded-lg flex items-center text-center justify-center text-light leading-none"
+          className="flex h-[60px] items-center justify-center rounded-lg bg-[#468EA0] text-center font-sans leading-none text-light xs:w-[150px] xs:px-[10px] xs:py-[5px] lg:w-[360px] lg:px-[20px] lg:pt-[5px]"
         >
           Sign In
         </button>
