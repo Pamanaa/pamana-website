@@ -4,6 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import { signOut } from "./features/auth/actions/sign-out";
 import { getAuth } from "./features/auth/queries/get-auth";
+import Navbar from "@/components/NavBar/navbar";
 
 const dongle = Dongle({
   subsets: ["latin"],
@@ -23,7 +24,10 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${dongle.className} font-sans`}>{children}</body>
+      <body className="dongle-h1-regular">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
