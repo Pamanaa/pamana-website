@@ -14,11 +14,11 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-white p-2">
-      <div className="mx-auto max-w-7xl">
+      <div className="max-w-8xl px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link href="/">
-              <Image src={logo} alt="Pamana" width={50} height={50} />
+              <Image src={logo} alt="Pamana" width={64} height={64} />
             </Link>
           </div>
           <div className="hidden items-center space-x-4 md:flex">
@@ -27,16 +27,16 @@ const Navbar: React.FC = () => {
                 {link.submenu ? (
                   <div>
                     <button
-                      className="rounded-md px-3 py-2 text-brown dongle-header-active focus:outline-none"
+                      className="rounded-md px-3 py-2 text-brown dongle-header-active hover:bg-beige focus:outline-none"
                       onClick={() => toggleMenu(link.name)}
                     >
                       {link.name}
                     </button>
                     {openMenu === link.name && (
-                      <div className="absolute left-0 top-full mt-2 rounded-md bg-white px-3 py-1 shadow-lg">
+                      <div className="absolute left-0 top-full mt-2 rounded-xl bg-white pt-1 text-center shadow-lg">
                         {link.sublinks?.map(sublink => (
                           <Link
-                            className="block py-1 text-brown dongle-header-active"
+                            className="block w-full px-10 py-1 text-brown dongle-header-active hover:bg-beige"
                             key={sublink.name}
                             href={sublink.link}
                             passHref
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
                   </div>
                 ) : (
                   <Link
-                    className="rounded-md px-3 py-2 dongle-header-active"
+                    className="rounded-md px-3 py-2 transition-all dongle-header-active hover:bg-beige"
                     href={link.link}
                     passHref
                   >
