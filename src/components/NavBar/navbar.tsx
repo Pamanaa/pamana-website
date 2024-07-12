@@ -1,19 +1,21 @@
 "use client";
-import React, { useState } from "react";
-import Image from "next/image";
 import logo from "@/assets/images/Logo.png";
+import Image from "next/image";
 import Link from "next/link";
-import { navlinks } from "./navlinks"; // Adjust the path based on your project structure
+import { usePathname } from "next/navigation";
+import React, { useState } from "react";
+import { navlinks } from "./navlinks";
 
 const Navbar: React.FC = () => {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const currentPath = usePathname();
 
   const toggleMenu = (name: string) => {
     setOpenMenu(openMenu === name ? null : name);
   };
 
   return (
-    <nav className="bg-white p-2">
+    <nav className="bg-white p-2 shadow-md">
       <div className="max-w-8xl px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
@@ -27,29 +29,45 @@ const Navbar: React.FC = () => {
                 {link.submenu ? (
                   <div>
                     <button
-                      className="rounded-md px-3 py-2 text-brown dongle-header-active hover:bg-beige focus:outline-none"
+                      className={`rounded-md px-3 py-2 text-brown ${
+                        currentPath === link.link
+                          ? "dongle-header-active"
+                          : "dongle-header-regular hover:bg-beige"
+                      }`}
                       onClick={() => toggleMenu(link.name)}
                     >
                       {link.name}
                     </button>
                     {openMenu === link.name && (
-                      <div className="absolute left-0 top-full mt-2 rounded-xl bg-white pt-1 text-center shadow-lg">
-                        {link.sublinks?.map(sublink => (
-                          <Link
-                            className="block w-full px-10 py-1 text-brown dongle-header-active hover:bg-beige"
-                            key={sublink.name}
-                            href={sublink.link}
-                            passHref
-                          >
-                            {sublink.name}
-                          </Link>
+                      <div className="absolute left-0 top-full mt-2 rounded-b-xl bg-white pt-1 text-center shadow-lg">
+                        {link.sublinks?.map((sublink, index) => (
+                          <React.Fragment key={sublink.name}>
+                            <Link
+                              className={`block w-full px-10 py-1 text-brown ${
+                                currentPath === sublink.link
+                                  ? "dongle-header-active"
+                                  : "dongle-header-regular hover:bg-beige"
+                              }`}
+                              href={sublink.link}
+                              passHref
+                            >
+                              {sublink.name}
+                            </Link>
+                            {index !== link.sublinks.length - 1 && (
+                              <hr className="my-1 border-gray-100" />
+                            )}
+                          </React.Fragment>
                         ))}
                       </div>
                     )}
                   </div>
                 ) : (
                   <Link
-                    className="rounded-md px-3 py-2 transition-all dongle-header-active hover:bg-beige"
+                    className={`rounded-md px-3 py-2 transition-all ${
+                      currentPath === link.link
+                        ? "dongle-header-active"
+                        : "dongle-header-regular hover:bg-beige"
+                    }`}
                     href={link.link}
                     passHref
                   >
@@ -95,26 +113,36 @@ const Navbar: React.FC = () => {
             {navlinks.map(link => (
               <div key={link.name} className="py-1">
                 {link.submenu ? (
-                  <div className="ml-4">
-                    <p className="text-brown dongle-header-regular">
-                      {link.name}
-                    </p>
+                  <div className="">
+                    <p className="dongle-body-regular">{link.name}</p>
                     <div className="mt-1">
-                      {link.sublinks?.map(sublink => (
-                        <Link
-                          className="block py-1 text-brown dongle-header-regular"
-                          key={sublink.name}
-                          href={sublink.link}
-                          passHref
-                        >
-                          {sublink.name}
-                        </Link>
+                      {link.sublinks?.map((sublink, index) => (
+                        <React.Fragment key={sublink.name}>
+                          <Link
+                            className={`ml-4 block rounded-xl px-2 py-1 text-brown ${
+                              currentPath === sublink.link
+                                ? "dongle-body-bold"
+                                : "dongle-body-regular hover:bg-beige"
+                            }`}
+                            href={sublink.link}
+                            passHref
+                          >
+                            {sublink.name}
+                          </Link>
+                          {index !== link.sublinks.length - 1 && (
+                            <hr className="my-1 border-gray-100" />
+                          )}
+                        </React.Fragment>
                       ))}
                     </div>
                   </div>
                 ) : (
                   <Link
-                    className="block py-1 text-brown dongle-header-regular"
+                    className={`block rounded-xl px-2 py-1 dongle-body-regular ${
+                      currentPath === link.link
+                        ? "dongle-body-bold"
+                        : "dongle-body-regular hover:bg-beige"
+                    }`}
                     key={link.name}
                     href={link.link}
                     passHref
