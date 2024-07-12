@@ -102,7 +102,7 @@ const Navbar: React.FC = () => {
                     <div className="mt-1">
                       {link.sublinks?.map(sublink => (
                         <Link
-                          className="block py-1 text-brown dongle-header-regular hover:bg-gray-600"
+                          className="block py-1 text-brown dongle-header-regular"
                           key={sublink.name}
                           href={sublink.link}
                           passHref
