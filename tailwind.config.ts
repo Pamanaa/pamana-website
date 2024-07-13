@@ -14,6 +14,7 @@ const config: Config = {
         dongle: ['"Dongle"', "sans-serif"],
         cormorant: ['"Cormorant SC"', "serif"],
         ephesis: ["Ephesis", "sans-serif"],
+        lao: ["Noto Sans Lao", "sans-serif"],
       },
       screens: {
         xs: "375px",
@@ -24,11 +25,12 @@ const config: Config = {
       },
       colors: {
         brown: "#7a4424",
-        "light-brown": "#aa7b62",
+        lightbrown: "#aa7b62",
         beige: "#f8efd0",
         aqua: "#468ea0",
         green: "#8dbc83",
         light: "#fefff3",
+        background: "#FEFFF3",
       },
     },
   },
