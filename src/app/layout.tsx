@@ -26,7 +26,7 @@ export default async function RootLayout({
     <html lang="en">
       <body className="dongle-h1-regular">
         <Navbar />
-        {children}
+        <div className="">{children}</div>
       </body>
     </html>
   );
