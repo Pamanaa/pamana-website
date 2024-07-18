@@ -45,6 +45,16 @@ const config: Config = {
           fontWeight: "300",
           fontFamily: '"Dongle", sans-serif',
         },
+        ".dongle-title-regular": {
+          fontSize: "4.375rem",
+          fontWeight: "400",
+          fontFamily: '"Dongle", sans-serif',
+        },
+        ".dongle-title-bold": {
+          fontSize: "4.375rem",
+          fontWeight: "700",
+          fontFamily: '"Dongle", sans-serif',
+        },
         ".dongle-h1-regular": {
           fontSize: "3.75rem",
           fontWeight: "400",
