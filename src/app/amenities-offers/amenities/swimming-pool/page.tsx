@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import { Carousel, souvenirShopImages } from "@/components/Carousel";
+import { swimmingPoolImages, Carousel } from "@/components/Carousel";
 
-const SouvenirShop = () => {
+const SwimmingPool = () => {
   return (
     <>
       <div className="relative h-[641px] w-full">
         <Image
-          src="/images/amenities/shop-1.jpg"
+          src="/images/amenities/pool-1.jpg"
           className=""
           alt="function hall"
           layout="fill"
@@ -15,7 +15,7 @@ const SouvenirShop = () => {
         />
         <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
           <h1 className="uppercase text-white cormorant-sc-t1-bold">
-            Souvenir Shop
+            Swimming Pool
           </h1>
         </div>
       </div>
@@ -23,7 +23,7 @@ const SouvenirShop = () => {
         <div className="flex w-[706px] flex-col items-center gap-y-[39px]">
           <div className="flex flex-col items-center">
             <h1 className="dongle-title-regular px-[50px] uppercase text-brown">
-              Souvenir Shop
+              Swimming Pool
             </h1>
             <hr className="w-full border-brown" />
           </div>
@@ -37,10 +37,10 @@ const SouvenirShop = () => {
         </div>
       </div>
       <div className="py-10">
-        <Carousel images={souvenirShopImages} />
+        <Carousel images={swimmingPoolImages} />
       </div>
     </>
   );
 };
 
-export default SouvenirShop;
+export default SwimmingPool;
