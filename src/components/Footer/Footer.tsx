@@ -7,6 +7,7 @@ import NewsletterInput from "../NewsletterInput";
 const Footer = () => {
   return (
     <div className="relative h-[796px] w-full pt-[150px]">
+      {/* Background Image */}
       <Image
         src="/images/bg-footer.png"
         className="absolute inset-0"
@@ -14,6 +15,8 @@ const Footer = () => {
         layout="fill"
         objectFit="cover"
       />
+
+      {/* Wave Design with Pamana Logo */}
       <div className="relative min-h-[336px] w-full">
         <Image
           src="/images/wave.png"
@@ -31,7 +34,9 @@ const Footer = () => {
           />
         </div>
       </div>
+
       <div className="relative flex w-full justify-between bg-white px-[100px] pb-[50px]">
+        {/* Newsletter */}
         <div className="flex w-[406px] flex-col gap-y-2.5">
           <h1 className="uppercase leading-none text-brown dongle-h1-bold">
             Newsletter
@@ -43,6 +48,8 @@ const Footer = () => {
             <NewsletterInput />
           </div>
         </div>
+
+        {/* Sections */}
         <div className="flex w-[250px] flex-col gap-y-2.5">
           <h1 className="uppercase leading-none text-brown dongle-h1-bold">
             Sections
@@ -57,6 +64,8 @@ const Footer = () => {
             </Link>
           ))}
         </div>
+
+        {/* Contact Us */}
         <div className="flex w-[406px] flex-col gap-y-2.5">
           <h1 className="uppercase leading-none text-brown dongle-h1-bold">
             Contact Us

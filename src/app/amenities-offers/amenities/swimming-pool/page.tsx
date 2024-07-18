@@ -5,6 +5,7 @@ import { swimmingPoolImages, Carousel } from "@/components/Carousel";
 const SwimmingPool = () => {
   return (
     <>
+      {/* Hero Section */}
       <div className="relative h-[641px] w-full">
         <Image
           src="/images/amenities/pool-1.jpg"
@@ -19,6 +20,8 @@ const SwimmingPool = () => {
           </h1>
         </div>
       </div>
+
+      {/* Information Section */}
       <div className="flex items-center justify-center py-20">
         <div className="flex w-[706px] flex-col items-center gap-y-[39px]">
           <div className="flex flex-col items-center">
@@ -27,7 +30,6 @@ const SwimmingPool = () => {
             </h1>
             <hr className="w-full border-brown" />
           </div>
-
           <p className="text-center leading-none text-brown dongle-h3-light">
             Prepare your palate, for imaginative organic dishes, mouth-watering
             local favorites, and delicate pastries at Pamana. Prepare your
@@ -36,6 +38,8 @@ const SwimmingPool = () => {
           </p>
         </div>
       </div>
+
+      {/* Carousel Section */}
       <div className="py-10">
         <Carousel images={swimmingPoolImages} />
       </div>
