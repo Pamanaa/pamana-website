@@ -1,6 +1,4 @@
-import GalleryComponent from "../../components/Gallery/gallery-grid";
-import Image from "next/image";
-import GalleryWave from "@/components/Gallery/gallery-wave";
+import { GalleryComponent, GalleryWave } from "@/components/Gallery";
 
 const Gallery = () => {
   return (
