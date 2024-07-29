@@ -42,7 +42,7 @@ const Footer = () => {
             Newsletter
           </h1>
           <div className="flex flex-col gap-y-5">
-            <p className="leading-none text-light-brown dongle-h3-regular">
+            <p className="text-lightbrown leading-none dongle-h3-regular">
               Get the latest news and updates on Pamana Resort
             </p>
             <NewsletterInput />
@@ -58,7 +58,7 @@ const Footer = () => {
             <Link
               key={index}
               href={section.link}
-              className="leading-none text-light-brown dongle-h3-regular"
+              className="text-lightbrown leading-none dongle-h3-regular"
             >
               {section.text}
             </Link>
@@ -72,11 +72,11 @@ const Footer = () => {
           </h1>
           {contactLinks.map((contact, index) => (
             <div key={index} className="flex items-center gap-x-2.5">
-              <contact.icon size={24} className="text-light-brown" />
+              <contact.icon size={24} className="text-lightbrown" />
               <Link
                 href={contact.link}
                 target="_blank"
-                className="leading-none text-light-brown dongle-h3-regular"
+                className="text-lightbrown leading-none dongle-h3-regular"
               >
                 {contact.text}
               </Link>

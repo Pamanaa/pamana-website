@@ -26,11 +26,13 @@ const AmenitiesCard = ({ src, title, body, link }: Props) => {
         <div className="flex flex-col gap-y-5">
           <div className="flex flex-col">
             <h1 className="text-brown dongle-h2-regular">{title}</h1>
-            <p className="leading-tight text-brown dongle-h3-light">{body}</p>
+            <p className="lao-muang-don-body leading-tight text-brown">
+              {body}
+            </p>
           </div>
           <Link
             href={link}
-            className="hover: text-aqua underline underline-offset-8 dongle-h3-light hover:dongle-h3-regular"
+            className="lao-muang-don-body text-aqua underline underline-offset-8"
           >
             READ MORE
           </Link>
