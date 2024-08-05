@@ -78,7 +78,6 @@ const Navbar: React.FC = () => {
                         : "dongle-header-regular hover:bg-beige"
                     }`}
                     href={link.link}
-                    passHref
                   >
                     {link.name}
                   </Link>

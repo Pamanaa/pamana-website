@@ -19,4 +19,5 @@ export interface Rooms {
 export interface ButtonProps {
   primary?: boolean;
   label: string;
+  link: string;
 }

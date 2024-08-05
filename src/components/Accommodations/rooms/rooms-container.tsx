@@ -38,6 +38,7 @@ const Rooms: React.FC<ContainerStyle> = ({}) => {
               <Button
                 label={`VIEW ${roomslist[0].name.toUpperCase()}`}
                 primary
+                link="accommodations/rooms/cabanas"
               />
             </div>
           </div>
@@ -58,6 +59,7 @@ const Rooms: React.FC<ContainerStyle> = ({}) => {
               <Button
                 label={`VIEW ${roomslist[1].name.toUpperCase()}`}
                 primary
+                link="accommodations/rooms/single"
               />
             </div>
           </div>
@@ -102,6 +104,7 @@ const Rooms: React.FC<ContainerStyle> = ({}) => {
               <Button
                 label={`VIEW ${roomslist[2].name.toUpperCase()}`}
                 primary
+                link="accommodations/rooms/deluxe"
               />
             </div>
           </div>
@@ -122,6 +125,7 @@ const Rooms: React.FC<ContainerStyle> = ({}) => {
               <Button
                 label={`VIEW ${roomslist[3].name.toUpperCase()}`}
                 primary
+                link="accommodations/rooms/dormitory"
               />
             </div>
           </div>

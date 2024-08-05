@@ -1,4 +1,5 @@
 import { Rooms } from "@/components/Accommodations/rooms";
+import { Button } from "@/components/Button";
 import Image from "next/image";
 import React from "react";
 
