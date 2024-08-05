@@ -5,6 +5,7 @@ import Link from "next/link";
 import { signOut } from "./features/auth/actions/sign-out";
 import { getAuth } from "./features/auth/queries/get-auth";
 import Navbar from "@/components/NavBar/navbar";
+import { Footer } from "@/components/Footer";
 
 const dongle = Dongle({
   subsets: ["latin"],
@@ -26,7 +27,8 @@ export default async function RootLayout({
     <html lang="en">
       <body className="dongle-h1-regular">
         <Navbar />
-        <div className="">{children}</div>
+        {children}
+        <Footer />
       </body>
     </html>
   );

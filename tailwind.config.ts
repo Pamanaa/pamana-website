@@ -47,6 +47,16 @@ const config: Config = {
           fontWeight: "300",
           fontFamily: '"Dongle", sans-serif',
         },
+        ".dongle-title-regular": {
+          fontSize: "4.375rem",
+          fontWeight: "400",
+          fontFamily: '"Dongle", sans-serif',
+        },
+        ".dongle-title-bold": {
+          fontSize: "4.375rem",
+          fontWeight: "700",
+          fontFamily: '"Dongle", sans-serif',
+        },
         ".dongle-h1-regular": {
           fontSize: "3.75rem",
           fontWeight: "400",
@@ -173,6 +183,26 @@ const config: Config = {
           fontSize: "2.25rem",
           fontWeight: "700",
           fontFamily: '"Cormorant SC", serif',
+        },
+        ".lao-muang-don-h1": {
+          fontSize: "3.75rem",
+          fontFamily: '"Noto Sans Lao", "sans-serif"',
+        },
+        ".lao-muang-don-h2": {
+          fontSize: "3rem",
+          fontFamily: '"Noto Sans Lao", "sans-serif"',
+        },
+        ".lao-muang-don-h3": {
+          fontSize: "2.5rem",
+          fontFamily: '"Noto Sans Lao", "sans-serif"',
+        },
+        ".lao-muang-don-body": {
+          fontSize: "1.25rem",
+          fontFamily: '"Noto Sans Lao", "sans-serif"',
+        },
+        ".lao-muang-don-caption": {
+          fontSize: "1rem",
+          fontFamily: '"Noto Sans Lao", "sans-serif"',
         },
       };
       addUtilities(newUtilities);
