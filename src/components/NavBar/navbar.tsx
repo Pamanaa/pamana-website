@@ -2,13 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { navlinks } from "./navlinks";
 
 const Navbar: React.FC = () => {
   const router = useRouter();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const currentPath = usePathname();
+  const navbarRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = (name: string) => {
     setOpenMenu(openMenu === name ? null : name);
@@ -18,8 +19,24 @@ const Navbar: React.FC = () => {
     }
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      navbarRef.current &&
+      !navbarRef.current.contains(event.target as Node)
+    ) {
+      setOpenMenu(null);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <nav className="bg-white p-2 shadow-md">
+    <nav ref={navbarRef} className="bg-white p-2 shadow-md">
       <div className="max-w-8xl px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
