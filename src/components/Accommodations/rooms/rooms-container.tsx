@@ -9,7 +9,7 @@ interface ContainerStyle {
 
 const Rooms: React.FC<ContainerStyle> = ({}) => {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <div className="flex flex-col items-center">
         {/* First Wave */}
         <div className="flex h-60 items-end bg-beige">
@@ -143,7 +143,7 @@ const Rooms: React.FC<ContainerStyle> = ({}) => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
