@@ -1,6 +1,5 @@
 import hero from "@/assets/images/accomm-hero.png";
 import Rooms from "@/components/Accommodations/rooms/rooms-container";
-import WaveBeige from "@/components/Accommodations/waves/wave-beige";
 import Image from "next/image";
 import React from "react";
 
