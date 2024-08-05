@@ -1,8 +1,7 @@
 "use client";
-import logo from "@/assets/images/Logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { redirect, usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { navlinks } from "./navlinks";
 
@@ -25,7 +24,12 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link href="/">
-              <Image src={logo} alt="Pamana" width={64} height={64} />
+              <Image
+                src="/images/logo/Logo.png"
+                alt="Pamana"
+                width={64}
+                height={64}
+              />
             </Link>
           </div>
           <div className="hidden items-center space-x-4 md:flex">

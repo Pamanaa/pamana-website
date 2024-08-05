@@ -1,4 +1,3 @@
-import hero from "@/assets/images/accomm-hero.png";
 import Rooms from "@/components/Accommodations/rooms/rooms-container";
 import Image from "next/image";
 import React from "react";
@@ -8,9 +7,12 @@ const Accommodations = () => {
     <main className="">
       <section>
         <Image
-          src={hero}
+          src="/images/accommodation/accomm-hero.png"
           alt="Accommodation"
-          className="w-full] h-[613px] object-cover"
+          className="h-[613px] w-full object-cover"
+          width="0"
+          height="0"
+          sizes="100vw"
         />
       </section>
 

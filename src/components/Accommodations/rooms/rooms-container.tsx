@@ -1,9 +1,7 @@
 import React from "react";
 import { roomslist } from "./rooms";
-import WaveBeige from "../waves/wave-beige";
 import Image from "next/image";
 import { Button } from "@/components/Button/main-btn";
-import wave from "@/assets/images/wave-cabana-upper.png";
 
 interface ContainerStyle {
   invert?: boolean;
@@ -15,11 +13,18 @@ const Rooms: React.FC<ContainerStyle> = ({}) => {
       <div className="flex flex-col items-center">
         {/* First Wave */}
         <div className="flex h-60 items-end bg-beige">
-          <Image src={wave} alt="Wave" className="h-44 w-auto min-w-[1920px]" />
+          <Image
+            src="/images/wave/wave-cabana-upper.png"
+            alt="Wave"
+            className="h-44 w-auto min-w-[1920px]"
+            width="0"
+            height="0"
+            sizes="100vw"
+          />
         </div>
 
         {/* First Room (Cabanas) */}
-        <div className="bg-background mt-10 flex h-[467px] flex-col items-start">
+        <div className="mt-10 flex h-[467px] flex-col items-start bg-background">
           <div className="flex max-w-full flex-row items-center justify-center gap-24">
             <Image
               src={roomslist[0].image}
@@ -39,7 +44,7 @@ const Rooms: React.FC<ContainerStyle> = ({}) => {
         </div>
 
         {/* Second Room (Single) */}
-        <div className="bg-background flex h-[467px] flex-col items-start">
+        <div className="flex h-[467px] flex-col items-start bg-background">
           <div className="flex max-w-full flex-row-reverse items-center justify-center gap-24">
             <Image
               src={roomslist[1].image}
@@ -59,17 +64,31 @@ const Rooms: React.FC<ContainerStyle> = ({}) => {
         </div>
 
         {/* Second Wave */}
-        <div className="bg-lightbrown flex h-60 rotate-180 items-end">
-          <Image src={wave} alt="Wave" className="h-44 w-auto min-w-[1920px]" />
+        <div className="flex h-60 rotate-180 items-end bg-lightbrown">
+          <Image
+            src="/images/wave/wave-cabana-upper.png"
+            alt="Wave"
+            className="h-44 w-auto min-w-[1920px]"
+            width="0"
+            height="0"
+            sizes="100vw"
+          />
         </div>
 
         {/* Third Wave */}
         <div className="flex h-60 items-end bg-beige">
-          <Image src={wave} alt="Wave" className="h-44 w-auto min-w-[1920px]" />
+          <Image
+            src="/images/wave/wave-cabana-upper.png"
+            alt="Wave"
+            className="h-44 w-auto min-w-[1920px]"
+            width="0"
+            height="0"
+            sizes="100vw"
+          />
         </div>
 
         {/* Third Room (Deluxe) */}
-        <div className="bg-background flex h-[467px] flex-col items-start">
+        <div className="flex h-[467px] flex-col items-start bg-background">
           <div className="flex max-w-full flex-row items-center justify-center gap-24">
             <Image
               src={roomslist[2].image}
@@ -89,7 +108,7 @@ const Rooms: React.FC<ContainerStyle> = ({}) => {
         </div>
 
         {/* Fourth Room (Dormitory) */}
-        <div className="bg-background flex h-[467px] flex-col items-start">
+        <div className="flex h-[467px] flex-col items-start bg-background">
           <div className="flex max-w-full flex-row-reverse items-center justify-center gap-24">
             <Image
               src={roomslist[3].image}
@@ -109,8 +128,15 @@ const Rooms: React.FC<ContainerStyle> = ({}) => {
         </div>
 
         {/* Fourth Wave */}
-        <div className="bg-lightbrown flex h-60 rotate-180 items-end">
-          <Image src={wave} alt="Wave" className="h-44 w-auto min-w-[1920px]" />
+        <div className="flex h-60 rotate-180 items-end bg-lightbrown">
+          <Image
+            src="/images/wave/wave-cabana-upper.png"
+            alt="Wave"
+            className="h-44 w-auto min-w-[1920px]"
+            width="0"
+            height="0"
+            sizes="100vw"
+          />
         </div>
       </div>
     </>
