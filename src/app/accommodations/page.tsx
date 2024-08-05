@@ -1,4 +1,4 @@
-import Rooms from "@/components/Accommodations/rooms/rooms-container";
+import { Rooms } from "@/components/Accommodations/rooms";
 import Image from "next/image";
 import React from "react";
 
