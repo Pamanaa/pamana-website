@@ -10,6 +10,18 @@ export interface Sublinks {
   link: string;
 }
 
+export interface Rooms {
+  name: string;
+  description: string;
+  image: string;
+}
+
+export interface ButtonProps {
+  primary?: boolean;
+  label: string;
+  link: string;
+}
+
 export interface AmenitiesCardData {
   index: number;
   src: string;

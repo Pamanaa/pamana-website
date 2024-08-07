@@ -1,12 +1,11 @@
 import { signIn } from "../actions/sign-in";
 import Image from "next/image";
-import logo from "@/assets/images/Logo.png";
 
 const SignInForm = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-[32px] rounded-2xl bg-white px-[70px] py-[50px] xs:w-11/12 md:w-11/12 lg:w-2/5">
       <div className="flex flex-row items-center justify-center gap-2">
-        <Image src={logo} alt="logo" />
+        <Image src="/images/logo/Logo.png" alt="logo" />
         <div className="flex flex-col leading-none">
           <h1 className="font-ephesis text-[64px]">Pamana</h1>
           <p className="font-cormorant text-[16px]">RESORTS AND HOTELS</p>

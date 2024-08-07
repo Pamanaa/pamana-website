@@ -30,6 +30,7 @@ const config: Config = {
         aqua: "#468ea0",
         green: "#8dbc83",
         light: "#fefff3",
+        background: "#FEFFF3",
       },
     },
   },
