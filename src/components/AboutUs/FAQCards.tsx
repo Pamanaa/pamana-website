@@ -16,13 +16,11 @@ const FAQCards: React.FC<FAQCardProps> = ({ question, answer }) => {
           <div className="absolute -top-8 left-1/2 flex h-20 w-20 -translate-x-1/2 transform items-center justify-center rounded-full bg-[#8DBC83] text-[70px] font-extrabold text-white">
             <span>?</span>
           </div>
-          <div className="mt-6">
-            <h3 className="mb-2 mt-4 text-[40px] font-bold text-[#7A4424]">
+          <div className="mt-8">
+            <h3 className="mb-2 mt-4 text-[45px] font-bold leading-none text-[#7A4424]">
               {question}
             </h3>
-            <p className="text-[30px] leading-normal text-[#77442B]">
-              {answer}
-            </p>
+            <p className="text-[30px] leading-tight text-[#77442B]">{answer}</p>
           </div>
         </div>
       </div>
