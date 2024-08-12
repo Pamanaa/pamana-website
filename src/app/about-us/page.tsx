@@ -1,9 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import { FAQSection } from "@/components/AboutUs";
-import { Map } from "@/components/AboutUs";
-import { StoryPhotoGrid } from "@/components/AboutUs";
+import { FAQSection, StoryPhotoGrid, Map } from "@/components/AboutUs";
 
 import abtCover from "/public/images/about/AboutCover.png";
 import abtUsBG from "/public/images/about/AboutUs_BG.png";
