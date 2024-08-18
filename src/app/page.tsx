@@ -227,22 +227,22 @@ export default function Home() {
       <div>
         <h1 className="mt-[120px] text-center ephesis-h1">Guest Reviews</h1>
       </div>
-      <div className="flex">
-        <div className="ml-auto mr-auto mt-[150px]">
+      <div className="flex justify-center space-x-10">
+        <div className="mt-[150px]">
           <Review
             review={
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor."
             }
           ></Review>
         </div>
-        <div className="ml-auto mr-auto mt-[50px]">
+        <div className="mt-[50px]">
           <Review
             review={
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor."
             }
           ></Review>
         </div>
-        <div className="ml-auto mr-auto mt-[150px]">
+        <div className="mt-[150px]">
           <Review
             review={
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolor."
@@ -251,11 +251,11 @@ export default function Home() {
         </div>
       </div>
       <div>
-        <p className="mt-8 text-center dongle-h2-light">
+        <p className="-mb-5 mt-8 text-center dongle-h2-light">
           Please tell us your experience!
         </p>
       </div>
-      <div className="mb-6 mt-5 flex justify-center">
+      <div className="flex h-[150px] flex-col items-center justify-center">
         <Button label="Add a review"></Button>
       </div>
     </>
