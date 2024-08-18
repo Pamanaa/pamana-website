@@ -1,5 +1,8 @@
-import Image, { StaticImageData } from "next/image";
+"use client";
 
+import Image, { StaticImageData } from "next/image";
+import { IoIosStar } from "react-icons/io";
+import { IconContext } from "react-icons";
 interface ReviewProps {
   review: string;
 }
@@ -12,12 +15,15 @@ const Review: React.FC<ReviewProps> = ({ review }) => {
         {review}
       </p>
       <h1 className="-mt-5 ml-[365px]">"</h1>
-      <div className="-mt-14 flex justify-center">
-        <i className="h-12 w-12">&#9733;</i>
-        <i className="h-12 w-12">&#9733;</i>
-        <i className="h-12 w-12">&#9733;</i>
-        <i className="h-12 w-12">&#9733;</i>
-        <i className="h-12 w-12">&#9733;</i>
+      <div className="-mt-[40px] flex justify-center space-x-2">
+        <IconContext.Provider value={{ size: "30px" }}>
+          <IoIosStar />
+          <IoIosStar />
+          <IoIosStar />
+          <IoIosStar />
+
+          <IoIosStar />
+        </IconContext.Provider>
       </div>
     </div>
   );

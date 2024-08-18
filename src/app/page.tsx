@@ -1,27 +1,26 @@
 import Image from "next/image";
 import pamanahomeimg from "@/assets/images/Login.png";
-import home1 from "@/assets/images/home/home1.png";
-import wave from "@/assets/images/home/waveelement1.png";
-import home2 from "@/assets/images/home/home2.png";
-import home3 from "@/assets/images/home/home3.png";
-import wave2 from "@/assets/images/home/waveelement2.png";
-import deals from "@/assets/images/home/deals&offers.png";
-import aerial from "@/assets/images/home/aerial.jpg";
-import stock1 from "@/assets/images/home/stock1.png";
-import stock2 from "@/assets/images/home/stock2.png";
-import stock3 from "@/assets/images/home/stock3.png";
-import stock4 from "@/assets/images/home/stock4.png";
-import room1 from "@/assets/images/home/room1.png";
-import room2 from "@/assets/images/home/room2.png";
+import home1 from "@/public/images/home/home1.png";
+import wave from "@/public/images/home/waveelement1.png";
+import home2 from "@/public/images/home/home2.png";
+import home3 from "@/public/images/home/home3.png";
+import wave2 from "@/public/images/home/waveelement2.png";
+import deals from "@/public/images/home/deals&offers.png";
+import aerial from "@/public/images/home/aerial.jpg";
+import stock1 from "@/public/images/home/stock1.png";
+import stock2 from "@/public/images/home/stock2.png";
+import stock3 from "@/public/images/home/stock3.png";
+import stock4 from "@/public/images/home/stock4.png";
+import room1 from "@/public/images/home/room1.png";
+import room2 from "@/public/images/home/room2.png";
 import { Button } from "./features/auth/components/button";
-import Card from "./features/auth/components/Card/card";
-import color from "@/assets/images/home/beige.jpg";
-import tempresto from "@/assets/images/home/tempresto.jpg";
-import event1 from "@/assets/images/home/event1.png";
-import event2 from "@/assets/images/home/event2.png";
-import event3 from "@/assets/images/home/event3.png";
-import wedding from "@/assets/images/home/wedding.jpg";
-import Review from "./features/auth/components/reviews";
+import color from "@/public/images/home/beige.jpg";
+import tempresto from "@/public/images/home/tempresto.jpg";
+import event1 from "@/public/images/home/event1.png";
+import event2 from "@/public/images/home/event2.png";
+import event3 from "@/public/images/home/event3.png";
+import wedding from "@/public/images/home/wedding.jpg";
+import { Card, Review } from "@/components/home";
 
 export default function Home() {
   const rooms = [
@@ -137,7 +136,7 @@ export default function Home() {
           alt="bg"
         ></Image>
 
-        <div className="absolute flex">
+        <div className="absolute flex space-x-8">
           {rooms.map((room, index) => (
             <Card
               key={index}
@@ -148,22 +147,22 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="relative h-[790px] place-items-center">
+      <div className="relative flex h-screen items-center justify-center">
         <Image
-          className="absolute mt-[40px] h-full w-full object-cover brightness-50"
+          className="absolute h-full w-full object-cover brightness-50"
           src={tempresto}
           alt="tempresto"
         ></Image>
-        <h1 className="absolute ml-[580px] mt-[300px] text-white ephesis-h1">
-          Savor Culinary Delights
-        </h1>
-        <p className="absolute ml-[350px] mt-[400px] text-center text-white dongle-h2-light">
-          Prepare your palate, for imaginative organic dishes, mouth-watering{" "}
-        </p>
-        <p className="absolute ml-[500px] mt-[450px] text-white dongle-h2-light">
-          local favorites, and delicate pastries at Pamana.
-        </p>
-        <div className="absolute ml-[670px] mt-[550px]">
+        <div className="relative flex-col items-center text-center text-white">
+          <h1 className="text-white ephesis-h1">Savor Culinary Delights</h1>
+          <p className="text-white dongle-h2-light">
+            Prepare your palate, for imaginative organic dishes, mouth-watering{" "}
+          </p>
+          <p className="text-white dongle-h2-light">
+            local favorites, and delicate pastries at Pamana.
+          </p>
+        </div>
+        <div className="absolute mt-[400px]">
           <Button primary label="SEE RESTAURANTS"></Button>
         </div>
       </div>
@@ -203,25 +202,28 @@ export default function Home() {
           ></Image>
         </div>
       </div>
-      <div className="relative h-[790px] place-items-center">
+      <div className="relative flex h-screen items-center justify-center">
         <Image
-          className="absolute mt-[40px] h-full w-full object-cover brightness-50"
+          className="absolute h-full w-full object-cover brightness-50"
           src={wedding}
           alt="wedding"
         ></Image>
-        <h1 className="absolute ml-[580px] mt-[300px] text-white ephesis-h1">
-          Celebrate your Special Occasion
-        </h1>
-        <p className="absolute ml-[350px] mt-[400px] text-center text-white dongle-h2-light">
-          Prepare your palate, for imaginative organic dishes, mouth-watering{" "}
-        </p>
-        <p className="absolute ml-[500px] mt-[450px] text-white dongle-h2-light">
-          local favorites, and delicate pastries at Pamana.
-        </p>
-        <div className="absolute ml-[670px] mt-[550px]">
+        <div className="relative flex-col items-center text-center text-white">
+          <h1 className="text-white ephesis-h1">
+            Celebrate your Special Occasion
+          </h1>
+          <p className="text-white dongle-h2-light">
+            Prepare your palate, for imaginative organic dishes, mouth-watering{" "}
+          </p>
+          <p className="text-white dongle-h2-light">
+            local favorites, and delicate pastries at Pamana.
+          </p>
+        </div>
+        <div className="absolute mt-[400px]">
           <Button primary label="SEE EVENTS"></Button>
         </div>
       </div>
+
       <div>
         <h1 className="mt-[120px] text-center ephesis-h1">Guest Reviews</h1>
       </div>
@@ -253,7 +255,7 @@ export default function Home() {
           Please tell us your experience!
         </p>
       </div>
-      <div className="mb-6 ml-[700px] mt-5">
+      <div className="mb-6 mt-5 flex justify-center">
         <Button label="Add a review"></Button>
       </div>
     </>
