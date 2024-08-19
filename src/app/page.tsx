@@ -13,7 +13,7 @@ import stock3 from "@/public/images/home/stock3.png";
 import stock4 from "@/public/images/home/stock4.png";
 import room1 from "@/public/images/home/room1.png";
 import room2 from "@/public/images/home/room2.png";
-import { Button } from "./features/auth/components/button";
+import { Button } from "@/components/Button";
 import color from "@/public/images/home/beige.jpg";
 import tempresto from "@/public/images/home/tempresto.jpg";
 import event1 from "@/public/images/home/event1.png";
@@ -69,8 +69,8 @@ export default function Home() {
         <Image src={home3} alt="home3" className="mr-auto self-center" />
       </div>
       <div className="mt-8 flex justify-center space-x-10">
-        <Button primary label="ABOUT US"></Button>
-        <Button label="AMENITIES & OFFERS"></Button>
+        <Button primary label="ABOUT US" link=""></Button>
+        <Button label="AMENITIES & OFFERS" link=""></Button>
       </div>
       <div className="relative h-[700px] place-items-center">
         <Image
@@ -87,7 +87,7 @@ export default function Home() {
 
       <div className="relative">
         <h1 className="mt-[120px] text-center ephesis-h1">
-          This Month's Exclusive Offers
+          This Month&apos;s Exclusive Offers
         </h1>
         <p className="text-center dongle-h2-light">
           Avail Pamana Resort and Hotel’s latest deals and offers for this
