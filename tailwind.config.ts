@@ -14,6 +14,7 @@ const config: Config = {
         dongle: ['"Dongle"', "sans-serif"],
         cormorant: ['"Cormorant SC"', "serif"],
         ephesis: ["Ephesis", "sans-serif"],
+        lao: ["Noto Sans Lao", "sans-serif"],
       },
       screens: {
         xs: "375px",
@@ -24,11 +25,12 @@ const config: Config = {
       },
       colors: {
         brown: "#7a4424",
-        "light-brown": "#aa7b62",
+        lightbrown: "#aa7b62",
         beige: "#f8efd0",
         aqua: "#468ea0",
         green: "#8dbc83",
         light: "#fefff3",
+        background: "#FEFFF3",
       },
     },
   },
@@ -43,6 +45,16 @@ const config: Config = {
         ".dongle-header-regular": {
           fontSize: "2.5rem",
           fontWeight: "300",
+          fontFamily: '"Dongle", sans-serif',
+        },
+        ".dongle-title-regular": {
+          fontSize: "4.375rem",
+          fontWeight: "400",
+          fontFamily: '"Dongle", sans-serif',
+        },
+        ".dongle-title-bold": {
+          fontSize: "4.375rem",
+          fontWeight: "700",
           fontFamily: '"Dongle", sans-serif',
         },
         ".dongle-h1-regular": {
@@ -171,6 +183,26 @@ const config: Config = {
           fontSize: "2.25rem",
           fontWeight: "700",
           fontFamily: '"Cormorant SC", serif',
+        },
+        ".lao-muang-don-h1": {
+          fontSize: "3.75rem",
+          fontFamily: '"Noto Sans Lao", "sans-serif"',
+        },
+        ".lao-muang-don-h2": {
+          fontSize: "3rem",
+          fontFamily: '"Noto Sans Lao", "sans-serif"',
+        },
+        ".lao-muang-don-h3": {
+          fontSize: "2.5rem",
+          fontFamily: '"Noto Sans Lao", "sans-serif"',
+        },
+        ".lao-muang-don-body": {
+          fontSize: "1.25rem",
+          fontFamily: '"Noto Sans Lao", "sans-serif"',
+        },
+        ".lao-muang-don-caption": {
+          fontSize: "1rem",
+          fontFamily: '"Noto Sans Lao", "sans-serif"',
         },
       };
       addUtilities(newUtilities);

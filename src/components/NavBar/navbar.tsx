@@ -1,26 +1,52 @@
 "use client";
-import logo from "@/assets/images/Logo.png";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import React, { useEffect, useRef, useState } from "react";
 import { navlinks } from "./navlinks";
 
 const Navbar: React.FC = () => {
+  const router = useRouter();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const currentPath = usePathname();
+  const navbarRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = (name: string) => {
     setOpenMenu(openMenu === name ? null : name);
+    console.log(name);
+    if (name === "ACCOMMODATION") {
+      router.push("/accommodations");
+    }
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      navbarRef.current &&
+      !navbarRef.current.contains(event.target as Node)
+    ) {
+      setOpenMenu(null);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <nav className="bg-white p-2 shadow-md">
+    <nav ref={navbarRef} className="bg-white p-2 shadow-md">
       <div className="max-w-8xl px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link href="/">
-              <Image src={logo} alt="Pamana" width={64} height={64} />
+              <Image
+                src="/images/logo/Logo.png"
+                alt="Pamana"
+                width={64}
+                height={64}
+              />
             </Link>
           </div>
           <div className="hidden items-center space-x-4 md:flex">
