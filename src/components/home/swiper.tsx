@@ -33,12 +33,12 @@ const CustomSwiper: React.FC<SwiperProps> = ({ image }) => {
   return (
     <>
       <Swiper
-        modules={[EffectCoverflow, Pagination]}
+        modules={[EffectCoverflow, Navigation]}
         effect={"coverflow"}
         loop={true}
-        spaceBetween={30}
+        spaceBetween={100}
         slidesPerView={3}
-        pagination={true}
+        navigation
         centeredSlides={true}
         grabCursor={true}
         coverflowEffect={{
@@ -48,11 +48,13 @@ const CustomSwiper: React.FC<SwiperProps> = ({ image }) => {
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
-            <img
-              src={img}
-              alt={`Slide ${index}`}
-              className="h-72 max-h-[600px] w-72 object-cover"
-            />
+            {({ isActive }) => (
+              <img
+                src={img}
+                alt={`Slide ${index}`}
+                className={`${isActive ? "h-96 opacity-100" : "mt-10 h-72 opacity-70"} w-72 rounded-xl border-2 border-orange-500 object-cover`}
+              />
+            )}
           </SwiperSlide>
         ))}
       </Swiper>
