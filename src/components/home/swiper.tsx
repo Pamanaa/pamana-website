@@ -15,21 +15,11 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
 
 import Image, { StaticImageData } from "next/image";
 
-const images = [
-  "/images/gallery/1.png",
-  "/images/gallery/2.jpg",
-  "/images/gallery/3.jpg",
-  "/images/gallery/4.jpg",
-  "/images/gallery/5.jpg",
-  "/images/gallery/6.jpg",
-  "/images/gallery/7.jpg",
-];
-
 interface SwiperProps {
-  image: StaticImageData;
+  propWhichIsArray: string[];
 }
 
-const CustomSwiper: React.FC<SwiperProps> = ({ image }) => {
+const CustomSwiper: React.FC<SwiperProps> = ({ propWhichIsArray }) => {
   return (
     <>
       <Swiper
@@ -46,7 +36,7 @@ const CustomSwiper: React.FC<SwiperProps> = ({ image }) => {
           slideShadows: false,
         }}
       >
-        {images.map((img, index) => (
+        {propWhichIsArray.map((img, index) => (
           <SwiperSlide key={index}>
             {({ isActive }) => (
               <img

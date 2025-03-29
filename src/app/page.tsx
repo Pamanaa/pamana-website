@@ -20,6 +20,17 @@ import event2 from "@/public/images/home/event2.png";
 import event3 from "@/public/images/home/event3.png";
 import wedding from "@/public/images/home/wedding.jpg";
 import { Card, Review, CustomSwiper } from "@/components/home";
+import { TITLE_BUTTONS } from "@/components/constants";
+
+const images = [
+  "/images/gallery/1.png",
+  "/images/gallery/2.jpg",
+  "/images/gallery/3.jpg",
+  "/images/gallery/4.jpg",
+  "/images/gallery/5.jpg",
+  "/images/gallery/6.jpg",
+  "/images/gallery/7.jpg",
+];
 
 export default function Home() {
   const rooms = [
@@ -70,8 +81,15 @@ export default function Home() {
         <Image src={home3} alt="home3" className="mr-auto self-center" />
       </div>
       <div className="mt-8 flex justify-center space-x-10">
-        <Button primary label="ABOUT US" link="/about-us"></Button>
-        <Button label="AMENITIES & OFFERS" link="/amenities-offers"></Button>
+        <Button
+          primary
+          label={TITLE_BUTTONS.ABOUT_US}
+          link="/about-us"
+        ></Button>
+        <Button
+          label={TITLE_BUTTONS.AMENITIES_OFFERS}
+          link="/amenities-offers"
+        ></Button>
       </div>
       <div className="relative h-[700px] place-items-center">
         <Image
@@ -99,7 +117,7 @@ export default function Home() {
         </p>
       </div>
       <div>
-        <CustomSwiper image={stock1}></CustomSwiper>
+        <CustomSwiper propWhichIsArray={images}></CustomSwiper>
       </div>
       <div>
         <h1 className="mt-[120px] text-center ephesis-h1">
@@ -217,10 +235,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <h1 className="mt-[120px] text-center ephesis-h1">Guest Reviews</h1>
-      </div>
-      <div className="flex justify-center space-x-10">
+      </div> */}
+      {/* <div className="flex justify-center space-x-10">
         <div className="mt-[150px]">
           <Review
             review={
@@ -250,7 +268,7 @@ export default function Home() {
       </div>
       <div className="flex h-[150px] flex-col items-center justify-center">
         <Button label="Add a review" link="/about-us"></Button>
-      </div>
+      </div> */}
     </>
   );
 }
