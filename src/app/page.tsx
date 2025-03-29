@@ -1,5 +1,4 @@
 import Image from "next/image";
-import pamanahomeimg from "@/assets/images/Login.png";
 import home1 from "@/public/images/home/home1.png";
 import wave from "@/public/images/home/waveelement1.png";
 import home2 from "@/public/images/home/home2.png";
@@ -13,14 +12,25 @@ import stock3 from "@/public/images/home/stock3.png";
 import stock4 from "@/public/images/home/stock4.png";
 import room1 from "@/public/images/home/room1.png";
 import room2 from "@/public/images/home/room2.png";
-import { Button } from "./features/auth/components/button";
+import { Button } from "@/components/Button";
 import color from "@/public/images/home/beige.jpg";
 import tempresto from "@/public/images/home/tempresto.jpg";
 import event1 from "@/public/images/home/event1.png";
 import event2 from "@/public/images/home/event2.png";
 import event3 from "@/public/images/home/event3.png";
 import wedding from "@/public/images/home/wedding.jpg";
-import { Card, Review } from "@/components/home";
+import { Card, Review, CustomSwiper } from "@/components/home";
+import { TITLE_BUTTONS } from "@/components/constants";
+
+const images = [
+  "/images/gallery/1.png",
+  "/images/gallery/2.jpg",
+  "/images/gallery/3.jpg",
+  "/images/gallery/4.jpg",
+  "/images/gallery/5.jpg",
+  "/images/gallery/6.jpg",
+  "/images/gallery/7.jpg",
+];
 
 export default function Home() {
   const rooms = [
@@ -31,8 +41,10 @@ export default function Home() {
     <>
       <div className="relative grid h-[750px] place-items-center">
         <Image
-          src={pamanahomeimg}
+          src="/images/login/Login.png"
           alt="Pamana Home Image"
+          width={500} // Set a width
+          height={300} // Set a height
           className="absolute h-full w-full object-cover"
         />
 
@@ -69,8 +81,15 @@ export default function Home() {
         <Image src={home3} alt="home3" className="mr-auto self-center" />
       </div>
       <div className="mt-8 flex justify-center space-x-10">
-        <Button primary label="ABOUT US"></Button>
-        <Button label="AMENITIES & OFFERS"></Button>
+        <Button
+          primary
+          label={TITLE_BUTTONS.ABOUT_US}
+          link="/about-us"
+        ></Button>
+        <Button
+          label={TITLE_BUTTONS.AMENITIES_OFFERS}
+          link="/amenities-offers"
+        ></Button>
       </div>
       <div className="relative h-[700px] place-items-center">
         <Image
@@ -97,24 +116,8 @@ export default function Home() {
           Experience the best vacation at its finest price.
         </p>
       </div>
-      <div className="mt-7 flex">
-        <Image src={stock4} alt="stock4" className="self-center"></Image>
-        <Image
-          src={stock2}
-          alt="stock2"
-          className="ml-auto mr-auto self-center"
-        ></Image>
-        <Image
-          src={deals}
-          alt="deals"
-          className="ml-auto mr-auto self-center"
-        ></Image>
-        <Image
-          src={stock1}
-          alt="stock1"
-          className="ml-auto mr-auto self-center"
-        ></Image>
-        <Image src={stock3} alt="stock3" className="self-center"></Image>
+      <div>
+        <CustomSwiper propWhichIsArray={images}></CustomSwiper>
       </div>
       <div>
         <h1 className="mt-[120px] text-center ephesis-h1">
@@ -163,7 +166,11 @@ export default function Home() {
           </p>
         </div>
         <div className="absolute mt-[400px]">
-          <Button primary label="SEE RESTAURANTS"></Button>
+          <Button
+            primary
+            label="SEE RESTAURANTS"
+            link="/amenities-offers/restuarants"
+          ></Button>
         </div>
       </div>
       <div>
@@ -220,14 +227,18 @@ export default function Home() {
           </p>
         </div>
         <div className="absolute mt-[400px]">
-          <Button primary label="SEE EVENTS"></Button>
+          <Button
+            primary
+            label="SEE EVENTS"
+            link="/amenities-offers/events"
+          ></Button>
         </div>
       </div>
 
-      <div>
+      {/* <div>
         <h1 className="mt-[120px] text-center ephesis-h1">Guest Reviews</h1>
-      </div>
-      <div className="flex justify-center space-x-10">
+      </div> */}
+      {/* <div className="flex justify-center space-x-10">
         <div className="mt-[150px]">
           <Review
             review={
@@ -256,8 +267,8 @@ export default function Home() {
         </p>
       </div>
       <div className="flex h-[150px] flex-col items-center justify-center">
-        <Button label="Add a review"></Button>
-      </div>
+        <Button label="Add a review" link="/about-us"></Button>
+      </div> */}
     </>
   );
 }

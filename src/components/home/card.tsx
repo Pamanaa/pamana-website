@@ -1,7 +1,6 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
-import { Button } from "../../app/features/auth/components/button";
 import { FaTv } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { IoPersonSharp } from "react-icons/io5";
