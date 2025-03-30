@@ -79,9 +79,10 @@ const Navbar: React.FC = () => {
                             >
                               {sublink.name}
                             </Link>
-                            {index !== link.sublinks.length - 1 && (
-                              <hr className="my-1 border-gray-100" />
-                            )}
+                            {link.sublinks &&
+                              index !== link.sublinks.length - 1 && (
+                                <hr className="my-1 border-gray-100" />
+                              )}
                           </React.Fragment>
                         ))}
                       </div>
@@ -155,9 +156,10 @@ const Navbar: React.FC = () => {
                           >
                             {sublink.name}
                           </Link>
-                          {index !== link.sublinks.length - 1 && (
-                            <hr className="my-1 border-gray-100" />
-                          )}
+                          {link.sublinks &&
+                            index !== link.sublinks.length - 1 && (
+                              <hr className="my-1 border-gray-100" />
+                            )}
                         </React.Fragment>
                       ))}
                     </div>
