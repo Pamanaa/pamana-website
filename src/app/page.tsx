@@ -19,8 +19,9 @@ import event1 from "@/public/images/home/event1.png";
 import event2 from "@/public/images/home/event2.png";
 import event3 from "@/public/images/home/event3.png";
 import wedding from "@/public/images/home/wedding.jpg";
-import { Card, Review, CustomSwiper } from "@/components/home";
-import { TITLE_BUTTONS } from "@/components/constants";
+import { Card } from "@/components/home";
+import { CustomSwiper } from "@/components/home";
+import { TITLE_BUTTONS } from "@/utils/constants";
 
 const images = [
   "/images/gallery/1.png",

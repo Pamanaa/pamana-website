@@ -1,19 +1,14 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-import "./styles.css";
-
-import { EffectCoverflow, Pagination, Navigation } from "swiper/modules";
-
-import Image, { StaticImageData } from "next/image";
+import "../styles/globals.css";
 
 interface SwiperProps {
   propWhichIsArray: string[];
