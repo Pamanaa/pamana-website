@@ -9,6 +9,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../styles/globals.css";
+import Image from "next/image";
 
 interface SwiperProps {
   propWhichIsArray: string[];
@@ -34,10 +35,14 @@ const CustomSwiper: React.FC<SwiperProps> = ({ propWhichIsArray }) => {
         {propWhichIsArray.map((img, index) => (
           <SwiperSlide key={index}>
             {({ isActive }) => (
-              <img
+              <Image
                 src={img}
                 alt={`Slide ${index}`}
-                className={`${isActive ? "h-96 opacity-100" : "mt-10 h-72 opacity-70"} w-72 rounded-xl border-2 border-orange-500 object-cover`}
+                width={288}
+                height={384}
+                className={`${
+                  isActive ? "h-96 opacity-100" : "mt-10 h-72 opacity-70"
+                } w-72 rounded-xl border-2 border-orange-500 object-cover`}
               />
             )}
           </SwiperSlide>

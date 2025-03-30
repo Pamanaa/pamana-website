@@ -8,7 +8,7 @@ import { IoBed } from "react-icons/io5";
 import { FaWifi } from "react-icons/fa";
 
 interface CardProps {
-  image: StaticImageData;
+  image: string;
   name: string;
   price: string;
 }
@@ -16,7 +16,14 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ image, name, price }) => {
   return (
     <div className="}] h-[570px] w-[550px] rounded-2xl bg-[rgb(254,255,243)] shadow-xl">
-      <Image className="w-full rounded-t-2xl" src={image} alt={name}></Image>
+      <Image
+        src={image}
+        alt={name}
+        width={0}
+        height={0}
+        sizes="100vw"
+        className="h-auto w-full rounded-t-2xl object-cover"
+      />
       <h1 className="ml-7 mt-5 dongle-h1-bold">{name}</h1>
       <p className="-mt-8 ml-7 text-[#468EA0]">&#8369;{price}</p>
       <div className="-mt-14 mb-6 ml-[380px] mr-[50px] flex">
