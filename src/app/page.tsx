@@ -53,29 +53,26 @@ export default function Home() {
           className="absolute bottom-[-90px] w-full"
           alt="waveelement2"
         />
-        <div className="absolute grid place-items-center">
-          <h1 className="text-white cormorant-sc-t1-bold">PAMANA</h1>
-          <h2 className="-mt-11 text-white cormorant-sc-t4-bold">
+
+        <div className="absolute grid place-items-center pb-10">
+          <h1 className="text-white cormorant-sc-t1-bold" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}>PAMANA</h1>
+          <h2 className="-mt-11 text-white cormorant-sc-t4-bold" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}>
             RESORTS AND HOTELS
           </h2>
         </div>
       </div>
 
       <div className="relative">
-        <h1 className="text-center ephesis-h1">Welcome to Pamana</h1>
-        <p className="text-center dongle-h2-light">
+        <h1 className="text-center ephesis-h1 pt-10">Welcome to Pamana</h1>
+        <p className="text-center text-xl px-60 py-4">
           A beautiful cove with fine sand perfect for swimming. See right
-        </p>
-        <p className="-mt-7 text-center dongle-h2-light">
           before your eyes the perfect sunset at its best. A service synonymous
           to
-        </p>
-        <p className="-mt-7 mb-5 text-center dongle-h2-light">
           a Filipino hospitality
         </p>
       </div>
 
-      <div className="mt-15 flex">
+      <div className="mt-16 flex">
         <Image src={home1} alt="home1" className="ml-auto self-center" />
         <Image src={home2} alt="home2" className="ml-auto mr-auto" />
         <Image src={home3} alt="home3" className="mr-auto self-center" />
@@ -105,33 +102,30 @@ export default function Home() {
       </div>
 
       <div className="relative">
-        <h1 className="mt-[120px] text-center ephesis-h1">
+        <h1 className="pt-44 text-center ephesis-h1">
           This Month's Exclusive Offers
         </h1>
-        <p className="text-center dongle-h2-light">
+        <p className="text-center text-xl px-60 pt-4">
           Avail Pamana Resort and Hotel’s latest deals and offers for this
           month!
-        </p>
-        <p className="-mt-7 text-center dongle-h2-light">
           Experience the best vacation at its finest price.
         </p>
+        <div>
+          <CustomSwiper propWhichIsArray={images}></CustomSwiper>
+        </div>
       </div>
       <div>
-        <CustomSwiper propWhichIsArray={images}></CustomSwiper>
-      </div>
-      <div>
-        <h1 className="mt-[120px] text-center ephesis-h1">
+        <h1 className="pt-40 text-center ephesis-h1">
           Relax in Serenity and Comfort
         </h1>
-        <p className="text-center dongle-h2-light">
+        <p className="text-center text-xl px-60 pt-4">
           Feel the exhilaration of being near the legendary MetLife Stadium,
           home to
-        </p>
-        <p className="-mt-7 text-center dongle-h2-light">
           unforgettable events. Our lavish accommodations promise a stay beyond
           compare. 
         </p>
       </div>
+
       <div className="relative -mt-7 grid h-[750px] place-items-center">
         <Image
           className="absolute bottom-[-50px] h-[400px] w-full"
@@ -158,10 +152,8 @@ export default function Home() {
         ></Image>
         <div className="relative flex-col items-center text-center text-white">
           <h1 className="text-white ephesis-h1">Savor Culinary Delights</h1>
-          <p className="text-white dongle-h2-light">
+          <p className="text-center text-xl px-60 pt-4">
             Prepare your palate, for imaginative organic dishes, mouth-watering{" "}
-          </p>
-          <p className="text-white dongle-h2-light">
             local favorites, and delicate pastries at Pamana.
           </p>
         </div>
@@ -177,14 +169,12 @@ export default function Home() {
         <h1 className="mt-[100px] text-center ephesis-h1">
           Witness Pamana Events
         </h1>
-        <p className="text-center dongle-h2-light">
-          Prepare your palate, for imaginative organic dishes, mouth-watering{" "}
-        </p>
-        <p className="-mt-7 text-center dongle-h2-light">
+        <p className="text-center text-xl px-60 pt-4">
+          Prepare your palate, for imaginative organic dishes, mouth-watering
           local favorites, and delicate pastries at Pamana.
         </p>
       </div>
-      <div className="relative mt-3 h-[500px]">
+      <div className="relative mt-10 h-[500px]">
         <Image
           className="absolute -bottom-11 h-[360px] w-full"
           src={color}
@@ -219,10 +209,8 @@ export default function Home() {
           <h1 className="text-white ephesis-h1">
             Celebrate your Special Occasion
           </h1>
-          <p className="text-white dongle-h2-light">
+          <p className="text-center text-xl px-60 pt-4">
             Prepare your palate, for imaginative organic dishes, mouth-watering{" "}
-          </p>
-          <p className="text-white dongle-h2-light">
             local favorites, and delicate pastries at Pamana.
           </p>
         </div>
