@@ -25,7 +25,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="dongle-h1-regular">
+      <body>
         <Navbar />
         {children}
         <Footer />

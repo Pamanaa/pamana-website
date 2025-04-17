@@ -8,6 +8,7 @@ import { navlinks } from "./navlinks";
 const Navbar: React.FC = () => {
   const router = useRouter();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const currentPath = usePathname();
   const navbarRef = useRef<HTMLDivElement>(null);
 
@@ -35,8 +36,17 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30); // true if not at top
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav ref={navbarRef} className="bg-white p-2 shadow-md">
+    <nav ref={navbarRef} className={`${scrolled ? 'bg-opacity-100 shadow-sm' : 'bg-opacity-10'} transition-all duration-300 bg-white p-2 fixed top-0 z-50 w-full`}>
       <div className="max-w-8xl px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
@@ -55,7 +65,7 @@ const Navbar: React.FC = () => {
                 {link.submenu ? (
                   <div>
                     <button
-                      className={`rounded-md px-3 py-2 text-brown ${
+                      className={`!text-2xl !font-semibold rounded-md px-3 text-brown ${
                         currentPath === link.link
                           ? "dongle-header-active"
                           : "dongle-header-regular hover:bg-beige"
@@ -89,7 +99,7 @@ const Navbar: React.FC = () => {
                   </div>
                 ) : (
                   <Link
-                    className={`rounded-md px-3 py-2 transition-all ${
+                    className={`!text-2xl !font-semibold rounded-md px-3 transition-all ${
                       currentPath === link.link
                         ? "dongle-header-active"
                         : "dongle-header-regular hover:bg-beige"
@@ -133,6 +143,7 @@ const Navbar: React.FC = () => {
             </button>
           </div>
         </div>
+        
         {/* Responsive Menu */}
         {openMenu === "mobileMenu" && (
           <div className="mt-2 md:hidden">
