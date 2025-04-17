@@ -15,22 +15,27 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ image, name, price }) => {
   return (
-    <div className="}] h-[570px] w-[550px] rounded-2xl bg-[rgb(254,255,243)] shadow-xl">
+    <div className="h-auto w-[30rem] rounded-2xl bg-[rgb(254,255,243)] shadow-xl">
       <Image className="w-full rounded-t-2xl" src={image} alt={name}></Image>
-      <h1 className="ml-7 mt-5 dongle-h1-bold">{name}</h1>
-      <p className="-mt-8 ml-7 text-[#468EA0]">&#8369;{price}</p>
-      <div className="-mt-14 mb-6 ml-[380px] mr-[50px] flex">
-        <IconContext.Provider value={{ size: "30px" }}>
-          <div className="flex space-x-2">
-            <IoPersonSharp />
-            <IoBed />
-            <FaTv />
-            <FaWifi />
-          </div>
-        </IconContext.Provider>
+      <div className="flex items-center justify-between px-8 py-4">
+        <div className="flex flex-col">
+          <h1 className="!text-3xl dongle-h1-bold">{name}</h1>
+          <p className="font-bold text-[#468EA0]">&#8369;{price}</p>
+        </div>
+        <div className="mb-6 flex">
+          <IconContext.Provider value={{ size: "20px" }}>
+            <div className="flex space-x-2">
+              <IoPersonSharp />
+              <IoBed />
+              <FaTv />
+              <FaWifi />
+            </div>
+          </IconContext.Provider>
+        </div>
       </div>
-      <div className="-mt-5 w-full">
-        <button className="h-[55px] items-center justify-center rounded-b-2xl bg-[#7a4424] text-center leading-none text-white xs:dongle-body-regular lg:w-[550px] lg:pt-[10px] lg:dongle-h3-regular">
+
+      <div className="w-full bg-[#7a4424] rounded-b-2xl">
+        <button className="w-full pt-2 py-1 !text-3xl items-center justify-center rounded-b-2xl  text-center leading-none text-white xs:dongle-body-regular lg:dongle-h3-regular">
           SEE DETAILS &#8594;
         </button>
       </div>

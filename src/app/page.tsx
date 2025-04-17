@@ -189,7 +189,7 @@ export default function Home() {
           alt="bg"
         ></Image>
 
-        <div className="absolute flex space-x-8">
+        <div className="absolute flex gap-x-16">
           {rooms.map((room, index) => (
             <Card
               key={index}
