@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import home1 from "@/public/images/home/home1.png";
 import wave from "@/public/images/home/waveelement1.png";
@@ -21,6 +23,7 @@ import event3 from "@/public/images/home/event3.png";
 import wedding from "@/public/images/home/wedding.jpg";
 import { Card, Review, CustomSwiper } from "@/components/home";
 import { TITLE_BUTTONS } from "@/components/constants";
+import { motion } from "framer-motion";
 
 const images = [
   "/images/gallery/1.png",
@@ -55,29 +58,60 @@ export default function Home() {
         />
 
         <div className="absolute grid place-items-center pb-10">
-          <h1 className="text-white cormorant-sc-t1-bold" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}>PAMANA</h1>
-          <h2 className="-mt-11 text-white cormorant-sc-t4-bold" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)' }}>
+          <h1
+            className="text-white cormorant-sc-t1-bold"
+            style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
+          >
+            PAMANA
+          </h1>
+          <h2
+            className="-mt-11 text-white cormorant-sc-t4-bold"
+            style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.4)" }}
+          >
             RESORTS AND HOTELS
           </h2>
         </div>
       </div>
 
       <div className="relative">
-        <h1 className="text-center ephesis-h1 pt-10">Welcome to Pamana</h1>
-        <p className="text-center text-xl px-60 py-4">
-          A beautiful cove with fine sand perfect for swimming. See right
-          before your eyes the perfect sunset at its best. A service synonymous
-          to
-          a Filipino hospitality
+        <h1 className="pt-10 text-center ephesis-h1">Welcome to Pamana</h1>
+        <p className="px-60 py-4 text-center text-xl">
+          A beautiful cove with fine sand perfect for swimming. See right before
+          your eyes the perfect sunset at its best. A service synonymous to a
+          Filipino hospitality
         </p>
       </div>
 
-      <div className="mt-16 flex">
-        <Image src={home1} alt="home1" className="ml-auto self-center" />
-        <Image src={home2} alt="home2" className="ml-auto mr-auto" />
-        <Image src={home3} alt="home3" className="mr-auto self-center" />
+      <div className="mt-16 flex justify-center gap-x-8">
+        <motion.img
+          src={home1.src}
+          alt="home1"
+          className="self-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        />
+        <motion.img
+          src={home2.src}
+          alt="home2"
+          className="self-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        />
+        <motion.img
+          src={home3.src}
+          alt="home3"
+          className="self-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        />
       </div>
-      <div className="mt-8 flex justify-center space-x-10">
+      <div className="mt-12 flex justify-center space-x-10">
         <Button
           primary
           label={TITLE_BUTTONS.ABOUT_US}
@@ -102,28 +136,50 @@ export default function Home() {
       </div>
 
       <div className="relative">
-        <h1 className="pt-44 text-center ephesis-h1">
+        <motion.h1
+          className="pt-44 text-center ephesis-h1"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
           This Month's Exclusive Offers
-        </h1>
-        <p className="text-center text-xl px-60 pt-4">
+        </motion.h1>
+        <motion.p
+          className="px-60 pt-4 text-center text-xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
           Avail Pamana Resort and Hotel’s latest deals and offers for this
-          month!
-          Experience the best vacation at its finest price.
-        </p>
+          month! Experience the best vacation at its finest price.
+        </motion.p>
         <div>
           <CustomSwiper propWhichIsArray={images}></CustomSwiper>
         </div>
       </div>
       <div>
-        <h1 className="pt-40 text-center ephesis-h1">
+        <motion.h1
+          className="pt-32 text-center ephesis-h1"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
           Relax in Serenity and Comfort
-        </h1>
-        <p className="text-center text-xl px-60 pt-4">
+        </motion.h1>
+        <motion.p
+          className="px-60 pt-4 text-center text-xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
           Feel the exhilaration of being near the legendary MetLife Stadium,
-          home to
-          unforgettable events. Our lavish accommodations promise a stay beyond
-          compare. 
-        </p>
+          home to unforgettable events. Our lavish accommodations promise a stay
+          beyond compare. 
+        </motion.p>
       </div>
 
       <div className="relative -mt-7 grid h-[750px] place-items-center">
@@ -151,11 +207,25 @@ export default function Home() {
           alt="tempresto"
         ></Image>
         <div className="relative flex-col items-center text-center text-white">
-          <h1 className="text-white ephesis-h1">Savor Culinary Delights</h1>
-          <p className="text-center text-xl px-60 pt-4">
+          <motion.h1
+            className="text-white ephesis-h1"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            Savor Culinary Delights
+          </motion.h1>
+          <motion.p
+            className="px-60 pt-4 text-center text-xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
             Prepare your palate, for imaginative organic dishes, mouth-watering{" "}
             local favorites, and delicate pastries at Pamana.
-          </p>
+          </motion.p>
         </div>
         <div className="absolute mt-[400px]">
           <Button
@@ -169,34 +239,46 @@ export default function Home() {
         <h1 className="mt-[100px] text-center ephesis-h1">
           Witness Pamana Events
         </h1>
-        <p className="text-center text-xl px-60 pt-4">
+        <p className="px-60 pt-4 text-center text-xl">
           Prepare your palate, for imaginative organic dishes, mouth-watering
           local favorites, and delicate pastries at Pamana.
         </p>
       </div>
-      <div className="relative mt-10 h-[500px]">
-        <Image
+      <div className="my-10 flex h-[500px]">
+        {/* <Image
           className="absolute -bottom-11 h-[360px] w-full"
           src={color}
           alt="bg"
-        ></Image>
+        ></Image> */}
 
-        <div className="relative z-10 flex">
-          <Image
-            className="mr-auto mt-[20px] self-center"
-            src={event1}
+        <div className="z-10 flex gap-x-12">
+          <motion.img
+            src={event1.src}
             alt="event1"
-          ></Image>
-          <Image
-            className="ml-auto mr-auto mt-[10px] w-[600px]"
-            src={event2}
+            className="mr-auto mt-[20px] self-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          />
+          <motion.img
+            src={event2.src}
             alt="event2"
-          ></Image>
-          <Image
-            className="ml-auto mt-[20px] w-[450px] self-center"
-            src={event3}
+            className="ml-auto mr-auto mt-[10px] w-[600px]"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          />
+          <motion.img
+            src={event3.src}
             alt="event3"
-          ></Image>
+            className="ml-auto mt-[20px] w-[450px] self-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          />
         </div>
       </div>
       <div className="relative flex h-screen items-center justify-center">
@@ -206,13 +288,25 @@ export default function Home() {
           alt="wedding"
         ></Image>
         <div className="relative flex-col items-center text-center text-white">
-          <h1 className="text-white ephesis-h1">
+          <motion.h1
+            className="text-white ephesis-h1"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
             Celebrate your Special Occasion
-          </h1>
-          <p className="text-center text-xl px-60 pt-4">
+          </motion.h1>
+          <motion.p
+            className="px-60 pt-4 text-center text-xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
             Prepare your palate, for imaginative organic dishes, mouth-watering{" "}
             local favorites, and delicate pastries at Pamana.
-          </p>
+          </motion.p>
         </div>
         <div className="absolute mt-[400px]">
           <Button

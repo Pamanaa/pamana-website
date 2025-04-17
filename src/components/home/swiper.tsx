@@ -35,6 +35,10 @@ const CustomSwiper: React.FC<SwiperProps> = ({ propWhichIsArray }) => {
           rotate: 0,
           slideShadows: false,
         }}
+        autoplay={{
+          delay: 3000, 
+          disableOnInteraction: false, 
+        }}
       >
         {propWhichIsArray.map((img, index) => (
           <SwiperSlide key={index}>
