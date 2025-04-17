@@ -65,10 +65,10 @@ const Navbar: React.FC = () => {
                 {link.submenu ? (
                   <div>
                     <button
-                      className={`!text-2xl !font-semibold rounded-md px-3 text-brown ${
+                      className={`!text-2xl !font-semibold rounded-md px-3 pt-1 text-brown ${
                         currentPath === link.link
                           ? "dongle-header-active"
-                          : "dongle-header-regular hover:bg-beige"
+                          : `dongle-header-regular ${scrolled ? "hover:bg-beige" : "hover:bg-beige/30"}`
                       }`}
                       onClick={() => toggleMenu(link.name)}
                     >
@@ -99,10 +99,10 @@ const Navbar: React.FC = () => {
                   </div>
                 ) : (
                   <Link
-                    className={`!text-2xl !font-semibold rounded-md px-3 transition-all ${
+                    className={`!text-2xl !font-semibold rounded-md pt-1 px-3 transition-all ${
                       currentPath === link.link
                         ? "dongle-header-active"
-                        : "dongle-header-regular hover:bg-beige"
+                        : `dongle-header-regular ${scrolled ? "hover:bg-beige" : "hover:bg-beige/30"}`
                     }`}
                     href={link.link}
                     passHref
