@@ -252,11 +252,11 @@ export default function Home() {
           alt="bg"
         ></Image> */}
 
-        <div className="z-10 flex gap-x-12">
+        <div className="z-10 flex gap-x-12 w-full">
           <motion.img
             src={PamanaEvents[0]}
             alt="event1"
-            className="mr-auto mt-[20px] self-center"
+            className="self-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -265,7 +265,7 @@ export default function Home() {
           <motion.img
             src={PamanaEvents[1]}
             alt="event2"
-            className="ml-auto mr-auto mt-[10px] w-[600px]"
+            className="w-[600px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
@@ -274,7 +274,7 @@ export default function Home() {
           <motion.img
             src={PamanaEvents[2]}
             alt="event3"
-            className="ml-auto mt-[20px] w-[450px] self-center"
+            className="self-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
