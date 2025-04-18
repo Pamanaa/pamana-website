@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { Button } from "@/components/Button";
 
 import { FAQSection, StoryPhotoGrid, Map } from "@/components/AboutUs";
 
@@ -60,9 +61,15 @@ const AboutUs = () => {
           </h1>
           <Map />
           <div className="flex flex-col items-center justify-center">
-            <button className="font-b rounded-xl bg-[#468EA0] px-10 py-2 text-[35px] text-white">
+            {/* <button className="font-b rounded-xl bg-[#468EA0] px-10 py-2 text-[35px] text-white">
               TAKE ME THERE
-            </button>
+            </button> */}
+
+            <Button
+              primary={true}
+              label="TAKE ME THERE"
+              link="https://maps.app.goo.gl/gQEsZkMW5pNLMCk28"
+            />
           </div>
         </div>
       </section>

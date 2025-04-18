@@ -1,44 +1,27 @@
 "use client";
 
 import Image from "next/image";
-import home1 from "@/public/images/home/home1.png";
-import wave from "@/public/images/home/waveelement1.png";
-import home2 from "@/public/images/home/home2.png";
-import home3 from "@/public/images/home/home3.png";
-import wave2 from "@/public/images/home/waveelement2.png";
-import deals from "@/public/images/home/deals&offers.png";
-import aerial from "@/public/images/home/aerial.jpg";
-import stock1 from "@/public/images/home/stock1.png";
-import stock2 from "@/public/images/home/stock2.png";
-import stock3 from "@/public/images/home/stock3.png";
-import stock4 from "@/public/images/home/stock4.png";
-import room1 from "@/public/images/home/room1.png";
-import room2 from "@/public/images/home/room2.png";
 import { Button } from "@/components/Button";
-import color from "@/public/images/home/beige.jpg";
-import tempresto from "@/public/images/home/tempresto.jpg";
-import event1 from "@/public/images/home/event1.png";
-import event2 from "@/public/images/home/event2.png";
-import event3 from "@/public/images/home/event3.png";
-import wedding from "@/public/images/home/wedding.jpg";
-import { Card, Review, CustomSwiper } from "@/components/home";
-import { TITLE_BUTTONS } from "@/components/constants";
+import { Card } from "@/components/home";
+import { CustomSwiper } from "@/components/home";
+import { TITLE_BUTTONS } from "@/utils/constants";
+import {
+  Aerial,
+  DefaultHomeImgs,
+  ExclusiveOffers,
+  PamanaEvents,
+  WaveImgs,
+  RoomImgs,
+  Color,
+  Tempresto,
+  Wedding,
+} from "@/utils/images";
 import { motion } from "framer-motion";
-
-const images = [
-  "/images/gallery/1.png",
-  "/images/gallery/2.jpg",
-  "/images/gallery/3.jpg",
-  "/images/gallery/4.jpg",
-  "/images/gallery/5.jpg",
-  "/images/gallery/6.jpg",
-  "/images/gallery/7.jpg",
-];
 
 export default function Home() {
   const rooms = [
-    { image: room1, name: "Deluxe Studio", price: "6,400" },
-    { image: room2, name: "Double Room", price: "6,400" },
+    { image: RoomImgs[0], name: "Deluxe Studio", price: "6,400" },
+    { image: RoomImgs[1], name: "Double Room", price: "6,400" },
   ];
   return (
     <>
@@ -52,9 +35,13 @@ export default function Home() {
         />
 
         <Image
-          src={wave}
-          className="absolute bottom-[-90px] w-full"
+          src={WaveImgs[0]}
           alt="waveelement2"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="absolute bottom-[-90px] h-auto w-full"
+          priority
         />
 
         <div className="absolute grid place-items-center pb-10">
@@ -84,7 +71,7 @@ export default function Home() {
 
       <div className="mt-16 flex justify-center gap-x-8">
         <motion.img
-          src={home1.src}
+          src={DefaultHomeImgs[0]}
           alt="home1"
           className="self-center"
           initial={{ opacity: 0, y: 20 }}
@@ -93,7 +80,7 @@ export default function Home() {
           viewport={{ once: true }}
         />
         <motion.img
-          src={home2.src}
+          src={DefaultHomeImgs[1]}
           alt="home2"
           className="self-center"
           initial={{ opacity: 0, y: 20 }}
@@ -102,7 +89,7 @@ export default function Home() {
           viewport={{ once: true }}
         />
         <motion.img
-          src={home3.src}
+          src={DefaultHomeImgs[2]}
           alt="home3"
           className="self-center"
           initial={{ opacity: 0, y: 20 }}
@@ -122,17 +109,25 @@ export default function Home() {
           link="/amenities-offers"
         ></Button>
       </div>
-      <div className="relative h-[700px] place-items-center">
+      <div className="relative grid h-[700px] place-items-center">
+        {/* Background Aerial Image */}
         <Image
-          className="absolute mt-[75px] h-full w-full object-cover"
-          src={aerial}
+          src={Aerial[0]}
           alt="aerial"
-        ></Image>
+          fill
+          className="absolute mt-[75px] object-cover"
+          priority
+        />
+
+        {/* Wave overlay */}
         <Image
-          className="absolute top-[50px] w-full"
-          src={wave2}
+          src={WaveImgs[1]}
           alt="wave 2"
-        ></Image>
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="absolute top-[50px] h-auto w-full"
+        />
       </div>
 
       <div className="relative">
@@ -143,7 +138,7 @@ export default function Home() {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          This Month's Exclusive Offers
+          This Month&apos;s Exclusive Offers
         </motion.h1>
         <motion.p
           className="px-60 pt-4 text-center text-xl"
@@ -156,7 +151,7 @@ export default function Home() {
           month! Experience the best vacation at its finest price.
         </motion.p>
         <div>
-          <CustomSwiper propWhichIsArray={images}></CustomSwiper>
+          <CustomSwiper propWhichIsArray={ExclusiveOffers}></CustomSwiper>
         </div>
       </div>
       <div>
@@ -184,8 +179,10 @@ export default function Home() {
 
       <div className="relative -mt-7 grid h-[750px] place-items-center">
         <Image
-          className="absolute bottom-[-50px] h-[400px] w-full"
-          src={color}
+          className="absolute bottom-[-50px] h-[400px] w-full object-cover"
+          src={Color[0]}
+          width={0}
+          height={0}
           alt="bg"
         ></Image>
 
@@ -202,10 +199,13 @@ export default function Home() {
       </div>
       <div className="relative flex h-screen items-center justify-center">
         <Image
-          className="absolute h-full w-full object-cover brightness-50"
-          src={tempresto}
+          src={Tempresto[0]}
           alt="tempresto"
-        ></Image>
+          width={0}
+          height={0}
+          sizes="auto"
+          className="absolute h-screen w-screen brightness-50"
+        />
         <div className="relative flex-col items-center text-center text-white">
           <motion.h1
             className="text-white ephesis-h1"
@@ -253,7 +253,7 @@ export default function Home() {
 
         <div className="z-10 flex gap-x-12">
           <motion.img
-            src={event1.src}
+            src={PamanaEvents[0]}
             alt="event1"
             className="mr-auto mt-[20px] self-center"
             initial={{ opacity: 0, y: 20 }}
@@ -262,7 +262,7 @@ export default function Home() {
             viewport={{ once: true }}
           />
           <motion.img
-            src={event2.src}
+            src={PamanaEvents[1]}
             alt="event2"
             className="ml-auto mr-auto mt-[10px] w-[600px]"
             initial={{ opacity: 0, y: 20 }}
@@ -271,7 +271,7 @@ export default function Home() {
             viewport={{ once: true }}
           />
           <motion.img
-            src={event3.src}
+            src={PamanaEvents[2]}
             alt="event3"
             className="ml-auto mt-[20px] w-[450px] self-center"
             initial={{ opacity: 0, y: 20 }}
@@ -283,10 +283,13 @@ export default function Home() {
       </div>
       <div className="relative flex h-screen items-center justify-center">
         <Image
-          className="absolute h-full w-full object-cover brightness-50"
-          src={wedding}
+          src={Wedding[0]}
           alt="wedding"
-        ></Image>
+          width={0}
+          height={0}
+          sizes="auto"
+          className="absolute h-screen w-screen brightness-50"
+        />
         <div className="relative flex-col items-center text-center text-white">
           <motion.h1
             className="text-white ephesis-h1"
@@ -317,6 +320,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* TODO: Make this a component */}
       {/* <div>
         <h1 className="mt-[120px] text-center ephesis-h1">Guest Reviews</h1>
       </div> */}
