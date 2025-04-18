@@ -25,7 +25,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="overflow-x-hidden">
+      <body className="overflow-x-hidden w-full">
         <Navbar />
         {children}
         <Footer />

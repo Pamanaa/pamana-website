@@ -252,7 +252,7 @@ export default function Home() {
           alt="bg"
         ></Image> */}
 
-        <div className="z-10 flex gap-x-12 w-full">
+        <div className="z-10 flex justify-between w-full">
           <motion.img
             src={PamanaEvents[0]}
             alt="event1"
