@@ -1,15 +1,29 @@
+// dependencies for gmaps:
+// npm i @googlemaps/js-api-loader
+// npi i @types/google.maps
+
 import React from "react";
+import Image from "next/image";
+import map from "/public/images/about/pamana_gmaps.png";
 
 const Map = () => {
   return (
     <div className="flex flex-col items-center justify-center bg-[#FEFFF3] pb-10">
-      <div className="flex h-96 w-9/12 items-center justify-center rounded-3xl bg-black">
-        <h2 className="text-center text-white">THIS IS THE MAP</h2>
-
-        {/* FINALIZE MAP!! */}
-        {/* picture or map talaga sya? */}
-      </div>
+      <Image
+        src={map}
+        alt="Google Maps of Pamana Resorts and Hotel"
+        className="h-96 w-9/12 rounded-3xl object-cover"
+      />
     </div>
+
+    // <div className="flex flex-col items-center justify-center bg-[#FEFFF3] pb-10">
+    //   <div className="flex h-96 w-9/12 items-center justify-center rounded-3xl bg-black">
+    //     <h2 className="text-center text-white">THIS IS THE MAP</h2>
+
+    //     {/* FINALIZE MAP!! */}
+    //     {/* picture or map talaga sya? */}
+    //   </div>
+    // </div>
   );
 };
 
