@@ -42,8 +42,8 @@ const Card: React.FC<CardProps> = ({ image, name, price }) => {
       </div>
 
       <div className="w-full bg-[#7a4424] rounded-b-2xl">
-        <button className="w-full pt-2 py-1 !text-3xl items-center justify-center rounded-b-2xl  text-center leading-none text-white xs:dongle-body-regular lg:dongle-h3-regular">
-          SEE DETAILS &#8594;
+        <button className="w-full pt-2 py-1 !text-3xl items-center justify-center rounded-b-2xl  text-center leading-none text-white xs:dongle-body-regular lg:dongle-h3-regular group">
+          SEE DETAILS <span className="ml-1 inline-block group-hover:animate-slideArrow">&#8594;</span>
         </button>
       </div>
     </div>

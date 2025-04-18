@@ -150,7 +150,7 @@ export default function Home() {
           Avail Pamana Resort and Hotel’s latest deals and offers for this
           month! Experience the best vacation at its finest price.
         </motion.p>
-        <div>
+        <div className="mt-12">
           <CustomSwiper propWhichIsArray={ExclusiveOffers}></CustomSwiper>
         </div>
       </div>
@@ -178,13 +178,14 @@ export default function Home() {
       </div>
 
       <div className="relative -mt-7 grid h-[750px] place-items-center">
-        <Image
-          className="absolute bottom-[-50px] h-[400px] w-full object-cover"
+        {/* wala sa figma */}
+        {/* <Image
+          className="absolute h-[600px] w-full object-cover"
           src={Color[0]}
           width={0}
           height={0}
           alt="bg"
-        ></Image>
+        ></Image> */}
 
         <div className="absolute flex gap-x-16">
           {rooms.map((room, index) => (
