@@ -245,7 +245,7 @@ export default function Home() {
           local favorites, and delicate pastries at Pamana.
         </p>
       </div>
-      <div className="my-10 flex h-[500px]">
+      <div className="my-10 flex h-[500px] w-full">
         {/* <Image
           className="absolute -bottom-11 h-[360px] w-full"
           src={color}
