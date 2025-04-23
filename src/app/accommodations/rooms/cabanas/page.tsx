@@ -1,6 +1,9 @@
 "use client";
 import Image from "next/image";
-import { FaBed, FaWifi, FaPerson, FaTv } from "react-icons/fa6";
+import BedIcon from "@mui/icons-material/Bed";
+import WifiIcon from "@mui/icons-material/Wifi";
+import PeopleIcon from "@mui/icons-material/People";
+import TvIcon from "@mui/icons-material/Tv";
 
 const Cabanas = () => {
   return (
@@ -63,7 +66,7 @@ const Cabanas = () => {
       <div className="px-16 py-12">
         <div className="grid grid-cols-2 gap-16">
           <div className="flex flex-col items-center justify-center">
-            <h3 className="max-w-[620px] text-center leading-8 text-brown dongle-h3-light">
+            <h3 className="max-w-[620px] text-center leading-10 text-brown dongle-h3-light">
               Prepare your palate, for imaginative organic dishes,
               mouth-watering local favorites, and delicate pastries at Pamana.
               Prepare your palate, for imaginative organic dishes,
@@ -71,22 +74,19 @@ const Cabanas = () => {
             </h3>
             <div className="mt-12 grid w-full grid-cols-2 gap-x-16 gap-y-8">
               <div className="flex flex-col items-center text-center text-lightbrown">
-                <FaBed />
+                <BedIcon style={{ fontSize: 48 }} />
                 <h1 className="dongle-h3-light">Queen Bed</h1>
               </div>
               <div className="flex flex-col items-center text-center text-lightbrown">
-                <FaWifi />
+                <WifiIcon style={{ fontSize: 48 }} />
                 <h1 className="dongle-h3-light">150 MBPS Speed</h1>
               </div>
               <div className="flex flex-col items-center text-center text-lightbrown">
-                <div className="flex flex-row">
-                  <FaPerson />
-                  <FaPerson />
-                </div>
+                <PeopleIcon style={{ fontSize: 48 }} />
                 <h1 className="dongle-h3-light">2-person Capacity</h1>
               </div>
               <div className="flex flex-col items-center text-center text-lightbrown">
-                <FaTv />
+                <TvIcon style={{ fontSize: 48 }} />
                 <h1 className="dongle-h3-light">TV with 50 Channels</h1>
               </div>
             </div>
