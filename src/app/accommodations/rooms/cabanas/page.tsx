@@ -110,7 +110,10 @@ const Cabanas = () => {
               </div>
             </div>
 
-            <button className="hover:bg-green-700 mt-auto w-full rounded-lg bg-green px-5 py-3 text-white transition-colors dongle-h3-regular">
+            <button
+              type="button"
+              className="hover:bg-green-700 mt-auto w-full rounded-lg bg-green px-5 py-3 text-white transition-colors dongle-h3-regular"
+            >
               BOOK NOW
             </button>
           </div>
