@@ -75,14 +75,14 @@ const Navbar: React.FC = () => {
                       {link.name}
                     </button>
                     {openMenu === link.name && (
-                      <div className="absolute left-0 top-full mt-2 rounded-b-xl bg-white pt-1 text-center shadow-lg">
+                      <div className={`overflow-x-hidden max-w-44 absolute left-0 top-full mt-4 rounded-b-xl pt-1 text-center shadow-lg ${scrolled ? "bg-beige text-brown" : "bg-beige/10 text-white"}`}>
                         {link.sublinks?.map((sublink, index) => (
                           <React.Fragment key={sublink.name}>
                             <Link
-                              className={`block w-full px-10 py-1 text-brown ${
+                              className={`block w-full px-10 py-1 !text-2xl ${
                                 currentPath === sublink.link
                                   ? "dongle-header-active"
-                                  : "dongle-header-regular hover:bg-beige"
+                                  : "dongle-header-regular hover:font-bold"
                               }`}
                               href={sublink.link}
                               passHref
