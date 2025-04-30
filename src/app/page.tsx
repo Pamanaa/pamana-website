@@ -245,7 +245,7 @@ export default function Home() {
           local favorites, and delicate pastries at Pamana.
         </p>
       </div>
-      <div className="my-10 flex h-[500px] w-full">
+      <div className="my-10 flex h-[31rem] w-full">
         {/* <Image
           className="absolute -bottom-11 h-[360px] w-full"
           src={color}
@@ -265,7 +265,7 @@ export default function Home() {
           <motion.img
             src={PamanaEvents[1]}
             alt="event2"
-            className="w-[600px]"
+            className="w-[37rem]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
