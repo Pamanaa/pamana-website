@@ -41,12 +41,15 @@ const Navbar: React.FC = () => {
       setScrolled(window.scrollY > 30); // true if not at top
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <nav ref={navbarRef} className={`${scrolled ? 'bg-opacity-100 shadow-sm' : 'bg-opacity-10'} transition-all duration-300 bg-white p-2 fixed top-0 z-50 w-full`}>
+    <nav
+      ref={navbarRef}
+      className={`${scrolled ? "bg-opacity-100 shadow-sm" : "bg-opacity-10"} fixed top-0 z-50 w-full bg-white p-2 transition-all duration-300`}
+    >
       <div className="max-w-8xl px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
@@ -65,17 +68,23 @@ const Navbar: React.FC = () => {
                 {link.submenu ? (
                   <div>
                     <button
-                      className={`!text-2xl !font-semibold rounded-md px-3 pt-1 ${
+                      className={`px-3 pt-1 !text-2xl !font-semibold ${
                         currentPath === link.link
-                          ? "dongle-header-active"
-                          : `dongle-header-regular ${scrolled ? "hover:bg-beige text-brown" : "hover:bg-beige/30 text-white"}`
-                      }`}
+                          ? scrolled
+                            ? "border-b-4 border-beige text-brown"
+                            : "border-b-4 border-beige/30 text-white"
+                          : scrolled
+                            ? "text-brown rounded-md  hover:bg-beige"
+                            : "text-white rounded-md  hover:bg-beige/30"
+                      } ${currentPath === link.link ? "dongle-header-active" : "dongle-header-regular"} `}
                       onClick={() => toggleMenu(link.name)}
                     >
                       {link.name}
                     </button>
                     {openMenu === link.name && (
-                      <div className={`overflow-x-hidden max-w-44 absolute left-0 top-full mt-4 rounded-b-xl pt-1 text-center shadow-lg ${scrolled ? "bg-beige text-brown" : "bg-beige/10 text-white"}`}>
+                      <div
+                        className={`absolute left-0 top-full mt-4 min-w-full max-w-full overflow-x-hidden rounded-b-xl pt-1 text-center shadow-lg ${scrolled ? "bg-beige text-brown" : "bg-beige/10 text-white"}`}
+                      >
                         {link.sublinks?.map((sublink, index) => (
                           <React.Fragment key={sublink.name}>
                             <Link
@@ -100,12 +109,17 @@ const Navbar: React.FC = () => {
                   </div>
                 ) : (
                   <Link
-                    className={`!text-2xl !font-semibold rounded-md pt-1 px-3 transition-all ${scrolled ? "hover:bg-beige text-brown" : "hover:bg-beige/30 text-white"} ${
-                      currentPath === link.link
-                        ? `dongle-header-active`
-                        : `dongle-header-regular`
-                    }`}
+                    onClick={() => toggleMenu(link.name)}
                     href={link.link}
+                    className={`px-3 pt-1 !text-2xl !font-semibold transition-all ${
+                      currentPath === link.link
+                        ? scrolled
+                          ? "border-b-4 border-beige text-brown"
+                          : "border-b-4 border-beige/30 text-white"
+                        : scrolled
+                          ? "text-brown rounded-md  hover:bg-beige"
+                          : "text-white rounded-md  hover:bg-beige/30"
+                    } ${currentPath === link.link ? "dongle-header-active" : "dongle-header-regular"} `}
                     passHref
                   >
                     {link.name}
@@ -144,7 +158,7 @@ const Navbar: React.FC = () => {
             </button>
           </div>
         </div>
-        
+
         {/* Responsive Menu */}
         {openMenu === "mobileMenu" && (
           <div className="mt-2 md:hidden">
