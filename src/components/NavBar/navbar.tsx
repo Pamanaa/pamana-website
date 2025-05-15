@@ -8,6 +8,7 @@ import { navlinks } from "./navlinks";
 const Navbar: React.FC = () => {
   const router = useRouter();
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const currentPath = usePathname();
   const navbarRef = useRef<HTMLDivElement>(null);
 
@@ -35,8 +36,20 @@ const Navbar: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30); // true if not at top
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav ref={navbarRef} className="bg-white p-2 shadow-md">
+    <nav
+      ref={navbarRef}
+      className={`${scrolled ? "bg-opacity-100 shadow-sm" : "bg-opacity-10"} fixed top-0 z-50 w-full bg-white p-2 transition-all duration-300`}
+    >
       <div className="max-w-8xl px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
@@ -55,24 +68,30 @@ const Navbar: React.FC = () => {
                 {link.submenu ? (
                   <div>
                     <button
-                      className={`rounded-md px-3 py-2 text-brown ${
+                      className={`px-3 pt-1 !text-2xl !font-semibold ${
                         currentPath === link.link
-                          ? "dongle-header-active"
-                          : "dongle-header-regular hover:bg-beige"
-                      }`}
+                          ? scrolled
+                            ? "border-b-4 border-beige text-brown"
+                            : "border-b-4 border-beige/30 text-white"
+                          : scrolled
+                            ? "text-brown rounded-md  hover:bg-beige"
+                            : "text-white rounded-md  hover:bg-beige/30"
+                      } ${currentPath === link.link ? "dongle-header-active" : "dongle-header-regular"} `}
                       onClick={() => toggleMenu(link.name)}
                     >
                       {link.name}
                     </button>
                     {openMenu === link.name && (
-                      <div className="absolute left-0 top-full mt-2 rounded-b-xl bg-white pt-1 text-center shadow-lg">
+                      <div
+                        className={`absolute left-0 top-full mt-4 min-w-full max-w-full overflow-x-hidden rounded-b-xl pt-1 text-center shadow-lg ${scrolled ? "bg-beige text-brown" : "bg-beige/10 text-white"}`}
+                      >
                         {link.sublinks?.map((sublink, index) => (
                           <React.Fragment key={sublink.name}>
                             <Link
-                              className={`block w-full px-10 py-1 text-brown ${
+                              className={`block w-full px-10 py-1 !text-2xl ${
                                 currentPath === sublink.link
                                   ? "dongle-header-active"
-                                  : "dongle-header-regular hover:bg-beige"
+                                  : "dongle-header-regular hover:font-bold"
                               }`}
                               href={sublink.link}
                               passHref
@@ -90,12 +109,17 @@ const Navbar: React.FC = () => {
                   </div>
                 ) : (
                   <Link
-                    className={`rounded-md px-3 py-2 transition-all ${
-                      currentPath === link.link
-                        ? "dongle-header-active"
-                        : "dongle-header-regular hover:bg-beige"
-                    }`}
+                    onClick={() => toggleMenu(link.name)}
                     href={link.link}
+                    className={`px-3 pt-1 !text-2xl !font-semibold transition-all ${
+                      currentPath === link.link
+                        ? scrolled
+                          ? "border-b-4 border-beige text-brown"
+                          : "border-b-4 border-beige/30 text-white"
+                        : scrolled
+                          ? "text-brown rounded-md  hover:bg-beige"
+                          : "text-white rounded-md  hover:bg-beige/30"
+                    } ${currentPath === link.link ? "dongle-header-active" : "dongle-header-regular"} `}
                     passHref
                   >
                     {link.name}
@@ -134,6 +158,7 @@ const Navbar: React.FC = () => {
             </button>
           </div>
         </div>
+
         {/* Responsive Menu */}
         {openMenu === "mobileMenu" && (
           <div className="mt-2 md:hidden">

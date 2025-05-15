@@ -16,6 +16,7 @@ const Footer = () => {
         objectFit="cover"
       />
 
+      <div className="absolute bottom-0 w-full">
       {/* Wave Design with Pamana Logo */}
       <div className="relative min-h-[336px] w-full">
         <Image
@@ -35,14 +36,14 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="relative flex w-full justify-between bg-white px-[100px] pb-[50px]">
+      <div className="relative flex w-full justify-between bg-white px-[100px] pb-20">
         {/* Newsletter */}
         <div className="flex w-[406px] flex-col gap-y-2.5">
-          <h1 className="uppercase leading-none text-brown dongle-h1-bold">
+          <h1 className="uppercase leading-none text-brown !text-3xl dongle-h1-bold">
             Newsletter
           </h1>
           <div className="flex flex-col gap-y-5">
-            <p className="text-lightbrown leading-none dongle-h3-regular">
+            <p className="text-lightbrown leading-none !text-3xl dongle-h3-regular">
               Get the latest news and updates on Pamana Resort
             </p>
             <NewsletterInput />
@@ -50,15 +51,15 @@ const Footer = () => {
         </div>
 
         {/* Sections */}
-        <div className="flex w-[250px] flex-col gap-y-2.5">
-          <h1 className="uppercase leading-none text-brown dongle-h1-bold">
+        <div className="flex w-[250px] flex-col gap-y-2">
+          <h1 className="uppercase leading-none text-brown !text-3xl dongle-h1-bold">
             Sections
           </h1>
           {sectionsLinks.map((section, index) => (
             <Link
               key={index}
               href={section.link}
-              className="text-lightbrown leading-none dongle-h3-regular"
+              className="text-lightbrown leading-none !text-3xl dongle-h3-regular"
             >
               {section.text}
             </Link>
@@ -67,7 +68,7 @@ const Footer = () => {
 
         {/* Contact Us */}
         <div className="flex w-[406px] flex-col gap-y-2.5">
-          <h1 className="uppercase leading-none text-brown dongle-h1-bold">
+          <h1 className="uppercase leading-none text-brown !text-3xl dongle-h1-bold">
             Contact Us
           </h1>
           {contactLinks.map((contact, index) => (
@@ -76,13 +77,15 @@ const Footer = () => {
               <Link
                 href={contact.link}
                 target="_blank"
-                className="text-lightbrown leading-none dongle-h3-regular"
+                className="text-lightbrown leading-none !text-3xl dongle-h3-regular"
               >
                 {contact.text}
               </Link>
             </div>
           ))}
         </div>
+
+      </div>
       </div>
     </div>
   );
