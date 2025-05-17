@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@lucia-auth/adapter-prisma": "^4.0.1",
+    "@mui/icons-material": "^7.0.2",
     "@prisma/client": "^5.16.1",
     "argon2": "^0.40.3",
     "bcrypt": "^5.1.1",
