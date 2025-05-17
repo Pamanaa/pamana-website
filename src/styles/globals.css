@@ -15,10 +15,29 @@
 body {
   color: rgb(var(--foreground-rgb-primary));
   background: rgb(var(--background));
+  --swiper-navigation-color: white;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 100px;
+  height: 400px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
 }

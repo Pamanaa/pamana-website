@@ -10,6 +10,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        slideArrow: {
+          '0%': { transform: 'translateX(-0.05rem)'},
+          '100%': { transform: 'translateX(calc(100% + 0.05rem))'}
+        },
+      },
+      animation: {
+        slideArrow: 'slideArrow 1s infinite',
+      },
       fontFamily: {
         dongle: ['"Dongle"', "sans-serif"],
         cormorant: ['"Cormorant SC"', "serif"],

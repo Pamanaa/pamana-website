@@ -1,0 +1,4 @@
+export const TITLE_BUTTONS = {
+    AMENITIES_OFFERS: "AMENITIES & OFFERS",
+    ABOUT_US: "ABOUT US"
+ }
