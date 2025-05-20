@@ -23,7 +23,7 @@ const Rooms: React.FC<ContainerStyle> = ({}) => {
           />
         </div>
 
-        {/* First Room (Cabanas) */}
+        {/* First Room (Cabanas)
         <div className="mt-10 flex h-[467px] flex-col items-start bg-background">
           <div className="flex max-w-full flex-row items-center justify-center gap-24">
             <Image
@@ -42,7 +42,7 @@ const Rooms: React.FC<ContainerStyle> = ({}) => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Second Room (Single) */}
         <div className="flex h-[467px] flex-col items-start bg-background">
@@ -59,7 +59,7 @@ const Rooms: React.FC<ContainerStyle> = ({}) => {
               <Button
                 label={`VIEW ${roomslist[1].name.toUpperCase()}`}
                 primary
-                link="accommodations/rooms/single"
+                link="accommodations/rooms/standard"
               />
             </div>
           </div>

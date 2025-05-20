@@ -1,7 +1,81 @@
-import React from "react";
+"use client";
 
-const Deluxe = () => {
-  return <div>Deluxe</div>;
+import RoomTypeContainer from "@/components/Accommodations/RoomType/roomtype-container";
+import { DeluxeData } from "@/components/Accommodations/RoomType/deluxe/data";
+import Image from "next/image";
+
+const DeluxePage = () => {
+  return (
+    <div className="mx-auto max-w-[1440px]">
+      <div className="relative h-[613px] w-full">
+        <h1 className="absolute inset-0 z-10 flex items-center justify-center text-7xl text-white cormorant-sc-t1-bold">
+          Deluxe
+        </h1>
+        <div className="absolute inset-0 z-[5] bg-black/30" />
+        <Image
+          src="/images/rooms/deluxe/DeluxeStudioRoomSeaview.jpg"
+          fill
+          className="object-cover"
+          sizes="100vw"
+          priority
+          alt="Deluxe Room Image"
+        />
+      </div>
+
+      <div className="grid grid-cols-4 gap-0">
+        <div className="relative h-[260px] overflow-hidden">
+          <Image
+            src="/images/rooms/deluxe/DeluxeStudioRoom.jpg"
+            width={360}
+            height={260}
+            className="h-full w-full object-cover"
+            alt="Deluxe Detail 1"
+          />
+        </div>
+        <div className="relative h-[260px] overflow-hidden">
+          <Image
+            src="/images/rooms/deluxe/DeluxeDoubleRoomSeaview.jpg"
+            width={360}
+            height={260}
+            className="h-full w-full object-cover"
+            alt="Deluxe Detail 2"
+          />
+        </div>
+        <div className="relative h-[260px] overflow-hidden">
+          <Image
+            src="/images/rooms/deluxe/DeluxeTripleRoom.jpg"
+            width={360}
+            height={260}
+            className="h-full w-full object-cover"
+            alt="Deluxe Detail 3"
+          />
+        </div>
+        <div className="relative h-[260px] overflow-hidden">
+          <Image
+            src="/images/rooms/deluxe/DeluxeDoubleRoom.jpg"
+            width={360}
+            height={260}
+            className="h-full w-full object-cover"
+            alt="Deluxe Detail 4"
+          />
+        </div>
+      </div>
+
+      {DeluxeData.map((room, index) => (
+        <RoomTypeContainer
+          key={index}
+          name={room.name}
+          description={room.description}
+          image={room.image}
+          price={room.price}
+          bed={room.bed}
+          capacity={room.capacity}
+          breakfast={room.breakfast}
+          roomsize={room.roomsize}
+        />
+      ))}
+    </div>
+  );
 };
 
-export default Deluxe;
+export default DeluxePage;
