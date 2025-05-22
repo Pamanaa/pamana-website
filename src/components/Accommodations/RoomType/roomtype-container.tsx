@@ -32,33 +32,33 @@ const RoomTypeContainer = ({
   roomsize,
 }: RoomTypeContainerProps) => {
   return (
-    <div className="px-16 py-12">
-      <div className="grid grid-cols-2 gap-16">
+    <div className="px-10 py-8">
+      <div className="grid grid-cols-2 gap-4">
         {/* Description and Features */}
         <div className="flex flex-col items-center justify-center">
-          <Image src={image} alt={name} width={500} height={500} />
-          <div className="mt-12 grid w-full grid-cols-2 gap-x-16 gap-y-8">
+          <Image src={image} alt={name} width={400} height={400} />
+          <div className="mt-12 grid w-full grid-cols-2 gap-x-10 gap-y-8">
             <div className="flex flex-col items-center text-center text-lightbrown">
-              <BedIcon style={{ fontSize: 48 }} />
+              <BedIcon style={{ fontSize: 40 }} />
               <h1 className="dongle-h3-light">{bed}</h1>
             </div>
             <div className="flex flex-col items-center text-center text-lightbrown">
-              <RestaurantIcon style={{ fontSize: 48 }} />
+              <RestaurantIcon style={{ fontSize: 40 }} />
               <h1 className="dongle-h3-light">{breakfast}</h1>
             </div>
             <div className="flex flex-col items-center text-center text-lightbrown">
-              <PeopleIcon style={{ fontSize: 48 }} />
+              <PeopleIcon style={{ fontSize: 40 }} />
               <h1 className="dongle-h3-light">{capacity}</h1>
             </div>
             <div className="flex flex-col items-center text-center text-lightbrown">
-              <AspectRatioIcon style={{ fontSize: 48 }} />
+              <AspectRatioIcon style={{ fontSize: 40 }} />
               <h1 className="dongle-h3-light">{roomsize}</h1>
             </div>
           </div>
         </div>
 
         {/* Booking Box */}
-        <div className="flex flex-col rounded-xl border border-brown bg-transparent p-8 shadow-md">
+        <div className="flex flex-col rounded-xl border border-brown bg-transparent p-6 shadow-md">
           <h2 className="mb-4 text-3xl text-brown ephesis-h2">
             Reserve {name}
           </h2>

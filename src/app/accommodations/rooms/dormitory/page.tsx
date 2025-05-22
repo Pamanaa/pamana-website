@@ -1,7 +1,7 @@
 "use client";
 
 import RoomTypeContainer from "@/components/Accommodations/RoomType/roomtype-container";
-import { DormitoryData } from "@/components/Accommodations/RoomType/dormitory/data";
+import { RoomDataList } from "@/data/data";
 import Image from "next/image";
 
 const DormitoryPage = () => {
@@ -61,19 +61,21 @@ const DormitoryPage = () => {
         </div>
       </div>
 
-      {DormitoryData.map((room, index) => (
-        <RoomTypeContainer
-          key={index}
-          name={room.name}
-          description={room.description}
-          image={room.image}
-          price={room.price}
-          bed={room.bed}
-          capacity={room.capacity}
-          breakfast={room.breakfast}
-          roomsize={room.roomsize}
-        />
-      ))}
+      {RoomDataList.filter(room => room.category === "Dormitory").map(
+        (room, index) => (
+          <RoomTypeContainer
+            key={index}
+            name={room.name}
+            description={room.description}
+            image={room.image}
+            price={room.price}
+            bed={room.bed}
+            capacity={room.capacity}
+            breakfast={room.breakfast}
+            roomsize={room.roomsize}
+          />
+        )
+      )}
     </div>
   );
 };

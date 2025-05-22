@@ -29,3 +29,14 @@ export interface AmenitiesCardData {
   body: string;
   link: string;
 }
+export interface RoomData {
+  category: string;
+  name: string;
+  description: string;
+  image: string;
+  price: string;
+  bed: string;
+  capacity: string;
+  breakfast: string;
+  roomsize: string;
+}

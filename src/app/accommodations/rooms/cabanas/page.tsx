@@ -1,12 +1,10 @@
 "use client";
 
 import RoomTypeContainer from "@/components/Accommodations/RoomType/roomtype-container";
-import { CabanaData } from "@/components/Accommodations/RoomType/cabanas/data";
+import { RoomDataList } from "@/data/data";
 import Image from "next/image";
 
 const CabanasPage = () => {
-  const room = CabanaData[0]; // since it's an array with one cabana
-
   return (
     <div className="mx-auto max-w-[1440px]">
       <div className="relative h-[613px] w-full">

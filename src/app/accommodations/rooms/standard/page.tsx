@@ -1,12 +1,10 @@
 "use client";
 
 import RoomTypeContainer from "@/components/Accommodations/RoomType/roomtype-container";
-import { StandardData } from "@/components/Accommodations/RoomType/standard/data";
+import { RoomDataList } from "@/data/data";
 import Image from "next/image";
 
 const StandardPage = () => {
-  const room = StandardData[0]; // since it's an array with one cabana
-
   return (
     <div className="mx-auto max-w-[1440px]">
       <div className="relative h-[613px] w-full">
@@ -63,19 +61,21 @@ const StandardPage = () => {
         </div>
       </div>
 
-      {StandardData.map((room, index) => (
-        <RoomTypeContainer
-          key={index}
-          name={room.name}
-          description={room.description}
-          image={room.image}
-          price={room.price}
-          bed={room.bed}
-          capacity={room.capacity}
-          breakfast={room.breakfast}
-          roomsize={room.roomsize}
-        />
-      ))}
+      {RoomDataList.filter(room => room.category === "Standard").map(
+        (room, index) => (
+          <RoomTypeContainer
+            key={index}
+            name={room.name}
+            description={room.description}
+            image={room.image}
+            price={room.price}
+            bed={room.bed}
+            capacity={room.capacity}
+            breakfast={room.breakfast}
+            roomsize={room.roomsize}
+          />
+        )
+      )}
     </div>
   );
 };

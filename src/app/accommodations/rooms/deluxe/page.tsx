@@ -1,7 +1,7 @@
 "use client";
 
 import RoomTypeContainer from "@/components/Accommodations/RoomType/roomtype-container";
-import { DeluxeData } from "@/components/Accommodations/RoomType/deluxe/data";
+import { RoomDataList } from "@/data/data";
 import Image from "next/image";
 
 const DeluxePage = () => {
@@ -61,19 +61,21 @@ const DeluxePage = () => {
         </div>
       </div>
 
-      {DeluxeData.map((room, index) => (
-        <RoomTypeContainer
-          key={index}
-          name={room.name}
-          description={room.description}
-          image={room.image}
-          price={room.price}
-          bed={room.bed}
-          capacity={room.capacity}
-          breakfast={room.breakfast}
-          roomsize={room.roomsize}
-        />
-      ))}
+      {RoomDataList.filter(room => room.category === "Deluxe").map(
+        (room, index) => (
+          <RoomTypeContainer
+            key={index}
+            name={room.name}
+            description={room.description}
+            image={room.image}
+            price={room.price}
+            bed={room.bed}
+            capacity={room.capacity}
+            breakfast={room.breakfast}
+            roomsize={room.roomsize}
+          />
+        )
+      )}
     </div>
   );
 };
