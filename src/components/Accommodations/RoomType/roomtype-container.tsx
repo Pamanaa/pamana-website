@@ -37,45 +37,45 @@ const RoomTypeContainer = ({
         {/* Description and Features */}
         <div className="flex flex-col items-center justify-center">
           <Image src={image} alt={name} width={400} height={400} />
-          <div className="mt-12 grid w-full grid-cols-2 gap-x-10 gap-y-8">
-            <div className="flex flex-col items-center text-center text-lightbrown">
-              <BedIcon style={{ fontSize: 40 }} />
-              <h1 className="dongle-h3-light">{bed}</h1>
-            </div>
-            <div className="flex flex-col items-center text-center text-lightbrown">
-              <RestaurantIcon style={{ fontSize: 40 }} />
-              <h1 className="dongle-h3-light">{breakfast}</h1>
-            </div>
-            <div className="flex flex-col items-center text-center text-lightbrown">
-              <PeopleIcon style={{ fontSize: 40 }} />
-              <h1 className="dongle-h3-light">{capacity}</h1>
-            </div>
-            <div className="flex flex-col items-center text-center text-lightbrown">
-              <AspectRatioIcon style={{ fontSize: 40 }} />
-              <h1 className="dongle-h3-light">{roomsize}</h1>
-            </div>
-          </div>
         </div>
 
         {/* Booking Box */}
         <div className="flex flex-col rounded-xl border border-brown bg-transparent p-6 shadow-md">
-          <h2 className="mb-4 text-3xl text-brown ephesis-h2">
+          <h2 className="mb-4 text-2xl text-brown ephesis-h2">
             Reserve {name}
           </h2>
           <hr className="mb-6 border-brown" />
           <div className="mb-6 flex flex-col">
             <div className="mb-2 flex flex-row items-baseline gap-1">
-              <span className="dongle-name-regular text-5xl text-brown">
+              <span className="dongle-name-regular text-4xl text-brown">
                 {price}
               </span>
-              <span className="text-brown dongle-h2-light">/night</span>
+              <span className="text-brown dongle-h3-light">/night</span>
             </div>
-            <div className="text-brown dongle-h3-light">{description}</div>
+            <div className="dongle-h5-light text-brown">{description}</div>
+            <div className="mt-12 grid w-full grid-cols-4 gap-x-10 gap-y-8">
+              <div className="flex flex-col items-center text-center text-lightbrown">
+                <BedIcon style={{ fontSize: 30 }} />
+                <h1 className="dongle-h4-light">{bed}</h1>
+              </div>
+              <div className="flex flex-col items-center text-center text-lightbrown">
+                <RestaurantIcon style={{ fontSize: 30 }} />
+                <h1 className="dongle-h4-light">{breakfast}</h1>
+              </div>
+              <div className="flex flex-col items-center text-center text-lightbrown">
+                <PeopleIcon style={{ fontSize: 30 }} />
+                <h1 className="dongle-h4-light">{capacity}</h1>
+              </div>
+              <div className="flex flex-col items-center text-center text-lightbrown">
+                <AspectRatioIcon style={{ fontSize: 30 }} />
+                <h1 className="dongle-h4-light">{roomsize}</h1>
+              </div>
+            </div>
           </div>
 
           <button
             type="button"
-            className="hover:bg-green-700 mt-auto w-full rounded-lg bg-green px-5 py-3 text-white transition-colors dongle-h3-regular"
+            className="hover:bg-green-500 dongle-h5-regular rounded-lg bg-green px-10 py-2 text-white transition-colors"
           >
             BOOK NOW
           </button>
