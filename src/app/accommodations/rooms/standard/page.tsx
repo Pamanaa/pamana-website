@@ -4,64 +4,64 @@ import RoomTypeContainer from "@/components/Accommodations/RoomType/roomtype-con
 import { RoomDataList } from "@/data/data";
 import Image from "next/image";
 
-const DeluxePage = () => {
+const StandardPage = () => {
   return (
     <div className="mx-auto max-w-[1440px]">
       <div className="relative h-[613px] w-full">
         <h1 className="absolute inset-0 z-10 flex items-center justify-center text-7xl text-white cormorant-sc-t1-bold">
-          Deluxe
+          STANDARD
         </h1>
         <div className="absolute inset-0 z-[5] bg-black/30" />
         <Image
-          src="/images/rooms/deluxe/DeluxeStudioRoomSeaview.jpg"
+          src="/images/rooms/standard/StudioRoom.jpg"
           fill
           className="object-cover"
           sizes="100vw"
           priority
-          alt="Deluxe Room Image"
+          alt="Standard Room Image"
         />
       </div>
 
       <div className="grid grid-cols-4 gap-0">
         <div className="relative h-[260px] overflow-hidden">
           <Image
-            src="/images/rooms/deluxe/DeluxeStudioRoom.jpg"
+            src="/images/rooms/standard/StudioRoom2.jpg"
             width={360}
             height={260}
             className="h-full w-full object-cover"
-            alt="Deluxe Detail 1"
+            alt="Standard Detail 1"
           />
         </div>
         <div className="relative h-[260px] overflow-hidden">
           <Image
-            src="/images/rooms/deluxe/DeluxeDoubleRoomSeaview.jpg"
+            src="/images/rooms/standard/DoubleRoom.jpg"
             width={360}
             height={260}
             className="h-full w-full object-cover"
-            alt="Deluxe Detail 2"
+            alt="Standard Detail 2"
           />
         </div>
         <div className="relative h-[260px] overflow-hidden">
           <Image
-            src="/images/rooms/deluxe/DeluxeTripleRoom.jpg"
+            src="/images/rooms/standard/StandardDouble.jpg"
             width={360}
             height={260}
             className="h-full w-full object-cover"
-            alt="Deluxe Detail 3"
+            alt="Standard Detail 3"
           />
         </div>
         <div className="relative h-[260px] overflow-hidden">
           <Image
-            src="/images/rooms/deluxe/DeluxeDoubleRoom.jpg"
+            src="/images/rooms/standard/DoubleRoom2.jpg"
             width={360}
             height={260}
             className="h-full w-full object-cover"
-            alt="Deluxe Detail 4"
+            alt="Standard Detail 4"
           />
         </div>
       </div>
 
-      {RoomDataList.filter(room => room.category === "Deluxe").map(
+      {RoomDataList.filter(room => room.category === "Standard").map(
         (room, index) => (
           <RoomTypeContainer
             key={index}
@@ -80,4 +80,4 @@ const DeluxePage = () => {
   );
 };
 
-export default DeluxePage;
+export default StandardPage;

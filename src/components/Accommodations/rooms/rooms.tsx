@@ -8,9 +8,9 @@ export const roomslist: Rooms[] = [
     image: "/images/rooms/cabana.png",
   },
   {
-    name: "SINGLE",
+    name: "STANDARD",
     description:
-      "Our Single rooms are perfect for solo travelers who want to enjoy the beach and the sun. These rooms are equipped with a king-size bed, a private bathroom, and a balcony with a view of the ocean.",
+      "Our Standard rooms are perfect for solo travelers who want to enjoy the beach and the sun. These rooms are equipped with a king-size bed, a private bathroom, and a balcony with a view of the ocean.",
     image: "/images/rooms/single.png",
   },
   {

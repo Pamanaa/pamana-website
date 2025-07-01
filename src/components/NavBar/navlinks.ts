@@ -21,17 +21,21 @@ export const navlinks: Links[] = [
     link: "/accommodations",
     submenu: true,
     sublinks: [
+      // {
+      //   name: "CABANAS",
+      //   link: "/accommodations/rooms/cabanas",
+      // },
       {
-        name: "CABANAS",
-        link: "/accommodations/rooms/cabanas",
-      },
-      {
-        name: "SINGLE",
-        link: "/accommodations/rooms/single",
+        name: "STANDARD",
+        link: "/accommodations/rooms/standard",
       },
       {
         name: "DELUXE",
         link: "/accommodations/rooms/deluxe",
+      },
+      {
+        name: "DORMITORY",
+        link: "/accommodations/rooms/dormitory",
       },
     ],
   },
